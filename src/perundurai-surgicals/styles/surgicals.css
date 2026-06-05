@@ -1,0 +1,8038 @@
+.surgicals-theme {
+    --navy: #081221;
+    --navy-light: #0D1B2A;
+    --blue: #1A5FA8;
+    --blue-mid: #0C447C;
+    --blue-light: #F1F5F9;
+    /* Medical Gray */
+    --teal: #0D9488;
+    --cyan: #06B6D4;
+    --amber: #C97A15;
+    --amber-soft: #FAEEDA;
+    --text: #0F172A;
+    --text-mid: #475569;
+    --text-light: #64748B;
+    --border: #E2E8F0;
+    --bg-alt: #F8FAFC;
+    --white: #FFFFFF;
+
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 24px;
+    --header-h: 72px;
+}
+
+.surgicals-theme * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.surgicals-theme,
+.surgicals-theme,
+.surgicals-theme #root {
+    overflow-x: clip;
+    max-width: 100vw;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.surgicals-theme {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent rare mobile first-paint horizontal overflow */
+@supports (overflow: clip) {
+
+    .surgicals-theme,
+    .surgicals-theme {
+        overflow-x: clip;
+    }
+}
+
+.surgicals-theme #root {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.surgicals-theme img {
+    max-width: 100%;
+}
+
+.surgicals-theme h1,
+.surgicals-theme h2,
+.surgicals-theme h3,
+.surgicals-theme h4,
+.surgicals-theme h5,
+.surgicals-theme h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+/* ── SCROLLBAR ── */
+/* Global window scrollbar */
+body.surgicals-theme::-webkit-scrollbar,
+.surgicals-theme ::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.surgicals-theme::-webkit-scrollbar-track,
+.surgicals-theme ::-webkit-scrollbar-track {
+    background: #F8FAFC;
+}
+
+body.surgicals-theme::-webkit-scrollbar-thumb,
+.surgicals-theme ::-webkit-scrollbar-thumb {
+    background: #1A5FA8 !important;
+    /* Primary PS logo blue color */
+    border-radius: 4px;
+}
+
+body.surgicals-theme::-webkit-scrollbar-thumb:hover,
+.surgicals-theme ::-webkit-scrollbar-thumb:hover {
+    background: #C97A15 !important;
+    /* Secondary PS logo orange/amber hover color */
+}
+
+/* Hide any accidental internal scrollbars inside the layout */
+.surgicals-theme body *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+/* ── NAV ── */
+.surgicals-theme nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--white);
+    padding: 0 5%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.surgicals-theme nav.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.surgicals-theme .logo-img {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
+.surgicals-theme .logo-icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.surgicals-theme .logo-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.surgicals-theme .logo-words .l1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blue);
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+}
+
+@media (min-width: 360px) {
+    .surgicals-theme .logo-words .l1 {
+        font-size: 17px;
+    }
+}
+
+.surgicals-theme .logo-words .l2 {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--amber);
+    line-height: 1.1;
+}
+
+@media (min-width: 360px) {
+    .surgicals-theme .logo-words .l2 {
+        font-size: 13px;
+    }
+}
+
+.surgicals-theme .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.surgicals-theme .nav-links a {
+    font-size: 17px;
+    font-weight: 500;
+    color: #0A1628;
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+}
+
+@media (hover: hover) {
+    .surgicals-theme .nav-links a:hover {
+        color: #1A5FA8;
+    }
+}
+
+.surgicals-theme .nav-links a.active {
+    color: var(--blue);
+}
+
+.surgicals-theme .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #C97A15;
+    transform: scaleX(1);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.surgicals-theme .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #C97A15;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+    .surgicals-theme .nav-links a:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+.surgicals-theme .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.surgicals-theme .nav-phone {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.surgicals-theme .nav-phone svg {
+    width: 14px;
+    height: 14px;
+}
+
+.surgicals-theme .nav-cta {
+    background: #C97A15;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.surgicals-theme .nav-cta:hover {
+    background: #A86010;
+}
+
+.surgicals-theme .nav-contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: 1.5px solid var(--blue);
+    transition: all 0.3s ease;
+}
+
+.surgicals-theme .nav-contact-btn:hover {
+    background: var(--blue);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .nav-contact-btn svg {
+    flex-shrink: 0;
+}
+
+.surgicals-theme .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.surgicals-theme .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* ── HERO ── */
+.surgicals-theme #hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 45px 5% 120px;
+    padding-bottom: 90px;
+    background: linear-gradient(135deg, #071A3E 0%, #0C3470 40%, #1A5FA8 100%);
+    overflow: clip !important;
+    /* Force clip to prevent internal scrollbars */
+    --spot-radius: 190px;
+}
+
+.surgicals-theme #hero::before,
+.surgicals-theme #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#c97a15 1.2px, transparent 1.2px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+/* 1. Base Layer: Dim, breathing dots */
+.surgicals-theme #hero::before {
+    opacity: 0.45;
+    animation: dotMotion 8s ease-in-out infinite, breathingOpacity 8s ease-in-out infinite;
+    /* Hide base dots inside spotlight so only one dot layer is visible */
+    mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0%, black 100%);
+    -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0%, black 100%);
+}
+
+/* 2. Spotlight Layer: Bright, glowing dots that follow the cursor */
+.surgicals-theme #hero::after {
+    opacity: 0.001;
+    background-image: radial-gradient(#c97a15 5.5px, transparent 5.5px);
+    /* Layered shadows for a 'super-glow' effect */
+    filter: none !important;
+    mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+    transition: none;
+    transform: none;
+    animation: dotMotion 8s ease-in-out infinite;
+}
+
+.surgicals-theme #hero:hover::after {
+    opacity: 1;
+}
+
+.surgicals-theme #hero:not(:hover)::before {
+    mask-image: none;
+    -webkit-mask-image: none;
+}
+
+@keyframes dotMotion {
+
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 0 10px;
+    }
+}
+
+@keyframes breathingOpacity {
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 0.75;
+    }
+}
+
+.surgicals-theme .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.surgicals-theme .hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 62px;
+    /* Extra height to ensure overlap */
+    fill: #ffffff;
+}
+
+.surgicals-theme .hero-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px;
+    min-width: 0;
+}
+
+.surgicals-theme .hero-col-left {
+    flex: 1 1 60%;
+    max-width: 60%;
+    min-width: 0;
+}
+
+.surgicals-theme .hero-col-right {
+    flex: 1 1 35%;
+    max-width: 35%;
+    min-width: 0;
+}
+
+.surgicals-theme .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(201, 122, 21, 0.1);
+    border: 1px solid rgba(201, 122, 21, 0.4);
+    color: #C97A15;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeInDown 0.6s ease 0.1s forwards;
+}
+
+.surgicals-theme .hero-badge:hover {
+    color: white;
+    background-color: #C97A15;
+}
+
+/* ── REVEAL SYSTEM ── */
+.surgicals-theme .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.surgicals-theme .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.surgicals-theme .reveal-up {
+    transform: translateY(60px);
+}
+
+.surgicals-theme .reveal-left {
+    transform: translateX(-60px);
+}
+
+.surgicals-theme .reveal-right {
+    transform: translateX(60px);
+}
+
+.surgicals-theme .reveal-scale {
+    transform: scale(0.9);
+}
+
+.surgicals-theme .visible {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+}
+
+.surgicals-theme .hero-title-line em {
+    text-shadow: none !important;
+}
+
+.surgicals-theme .hero-title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(24px);
+    text-shadow: none !important;
+}
+
+.surgicals-theme .hero-title-line:nth-child(1) {
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+.surgicals-theme .hero-title-line:nth-child(2) {
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+
+.surgicals-theme .hero-title-line:nth-child(3) {
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+}
+
+.surgicals-theme #hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.surgicals-theme .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 32px;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+
+.surgicals-theme .hero-value-props {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+}
+
+.surgicals-theme .hero-vp-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: -20px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.surgicals-theme .hero-vp-item svg {
+    width: 14px;
+    height: 14px;
+    color: #25D366;
+}
+
+.surgicals-theme .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.3s forwards;
+}
+
+.surgicals-theme .btn-primary {
+    background: #C97A15;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.surgicals-theme .btn-primary:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    box-shadow: none !important;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: none !important;
+    }
+
+    70% {
+        box-shadow: none !important;
+    }
+
+    100% {
+        box-shadow: none !important;
+    }
+}
+
+@media (hover: hover) {
+    .surgicals-theme .btn-primary:hover {
+        background: #A86010;
+        transform: translateY(-3px);
+        box-shadow: none !important;
+    }
+}
+
+.surgicals-theme .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+@media (hover: hover) {
+    .surgicals-theme .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* RIGHT COLUMN CARD */
+/* ── HERO SLIDESHOW WRAPPER ── */
+.surgicals-theme .hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: none !important;
+    background: #071A3E;
+    animation: fadeInRight 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+}
+
+/* ── SLIDES TRACK ── */
+.surgicals-theme .hs-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* CRITICAL — clips sliding slides */
+}
+
+/* ── INDIVIDUAL SLIDE ── */
+.surgicals-theme .hs-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    will-change: transform, opacity, clip-path;
+}
+
+.surgicals-theme .hs-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+    transform: translateX(0) scale(1);
+}
+
+/* Ken Burns on the background image of ACTIVE slide only */
+.surgicals-theme .hs-slide.active .hs-bg {
+    animation: kenBurns 10s ease-out forwards;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1.15) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.0) translate(0, 0);
+    }
+}
+
+/* ── BACKGROUND IMAGE (Ken Burns) ── */
+.surgicals-theme .hs-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    will-change: transform;
+}
+
+/* ── TRANSITION 1: SLIDE OVER (Cinematic) ── */
+.surgicals-theme .hs-slide.exit-slide-over {
+    transform: translateX(-20px) scale(0.98);
+    filter: brightness(0.7);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.9s ease;
+    z-index: 1;
+    opacity: 0;
+}
+
+.surgicals-theme .hs-slide.enter-slide-over {
+    animation: cinematicSlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 2;
+    opacity: 1;
+}
+
+@keyframes cinematicSlide {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ── TRANSITION 1 REVERSE: SLIDE OVER ── */
+.surgicals-theme .hs-slide.exit-slide-over-reverse {
+    transform: translateX(20px) scale(0.98);
+    filter: brightness(0.7);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.9s ease;
+    z-index: 1;
+    opacity: 0;
+}
+
+.surgicals-theme .hs-slide.enter-slide-over-reverse {
+    animation: cinematicSlideReverse 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 2;
+    opacity: 1;
+}
+
+@keyframes cinematicSlideReverse {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ── TRANSITION 2: PUSH (Cinematic) ── */
+.surgicals-theme .hs-slide.exit-push {
+    animation: cinematicPushOut 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 2;
+    opacity: 1;
+}
+
+@keyframes cinematicPushOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.surgicals-theme .hs-slide.enter-push {
+    animation: cinematicPushIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 1;
+    opacity: 1;
+}
+
+@keyframes cinematicPushIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ── TRANSITION 3: REVEAL WIPE (Cinematic) ── */
+.surgicals-theme .hs-slide.enter-wipe {
+    animation: cinematicWipeIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 3;
+    opacity: 1;
+}
+
+@keyframes cinematicWipeIn {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        filter: brightness(1.5);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        filter: brightness(1);
+    }
+}
+
+.surgicals-theme .hs-slide.exit-wipe {
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.4s ease 0.8s, filter 0.4s ease 0.8s;
+    filter: grayscale(0.2);
+}
+
+/* ── TRANSITION 4: ZOOM REVEAL (Cinematic) ── */
+.surgicals-theme .hs-slide.exit-zoom {
+    animation: cinematicZoomOut 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 2;
+    opacity: 1;
+}
+
+@keyframes cinematicZoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+.surgicals-theme .hs-slide.enter-zoom {
+    animation: cinematicZoomIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 3;
+    opacity: 1;
+}
+
+@keyframes cinematicZoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ── GRADIENT OVERLAY ── */
+.surgicals-theme .hs-overlay {
+    display: none;
+}
+
+/* ── SLIDE TEXT CONTENT (Staggered Cinematic Entrance) ── */
+.surgicals-theme .hs-content>* {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.surgicals-theme .hs-slide.active .hs-content>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggering */
+.surgicals-theme .hs-slide.active .hs-tag {
+    transition-delay: 0.3s;
+}
+
+.surgicals-theme .hs-slide.active .hs-text-box {
+    transition-delay: 0.45s;
+}
+
+.surgicals-theme .hs-slide.active .hs-enquire {
+    transition-delay: 0.6s;
+}
+
+.surgicals-theme .hs-content {
+    position: absolute;
+    bottom: 40px;
+    left: 24px;
+    right: 24px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.surgicals-theme .hs-tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #fff;
+    background: rgba(8, 18, 33, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-shadow: none !important;
+}
+
+.surgicals-theme .hs-bottom-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.surgicals-theme .hs-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+    background: rgba(8, 18, 33, 0.85);
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.surgicals-theme .hs-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.surgicals-theme .hs-enquire {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #C97A15;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.3px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.surgicals-theme .hs-enquire:hover {
+    background: #a86010;
+    transform: translateX(3px);
+}
+
+
+
+/* ── PREV / NEXT ARROWS ── */
+.surgicals-theme .hs-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.surgicals-theme .hero-slideshow:hover .hs-arrow {
+    opacity: 1;
+}
+
+.surgicals-theme .hs-arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.surgicals-theme .hs-prev {
+    left: 14px;
+}
+
+.surgicals-theme .hs-next {
+    right: 14px;
+}
+
+/* ── DOTS ── */
+.surgicals-theme .hs-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.surgicals-theme .hs-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: none;
+    padding: 0;
+}
+
+.surgicals-theme .hs-dot.active {
+    width: 20px;
+    border-radius: 3px;
+    background: #C97A15;
+}
+
+
+/* ── CATEGORY BADGE TOP LEFT ── */
+.surgicals-theme .hs-cat-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 10;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #fff;
+    background: rgba(26, 95, 168, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+/* ── THUMBNAIL STRIP (bottom right corner, 3 mini thumbs) ── */
+.surgicals-theme .hs-thumbs {
+    position: absolute;
+    bottom: 52px;
+    right: 14px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.surgicals-theme .hs-thumb {
+    width: 52px;
+    height: 38px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    opacity: 0.6;
+}
+
+.surgicals-theme .hs-thumb:hover {
+    opacity: 1;
+    border-color: #C97A15;
+}
+
+.surgicals-theme .hs-thumb.active {
+    opacity: 1;
+    border-color: #C97A15;
+}
+
+.surgicals-theme .hs-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+    .surgicals-theme .hero-slideshow {
+        width: 362px;
+        height: 318px;
+        margin: 0 auto;
+        border-radius: 16px;
+    }
+
+    .surgicals-theme .hs-content {
+        bottom: 36px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .surgicals-theme .hs-name {
+        font-size: 1.1rem;
+    }
+
+    .surgicals-theme .hs-thumbs {
+        display: none;
+    }
+
+    .surgicals-theme .hs-arrow {
+        display: none;
+    }
+}
+
+/* DESKTOP VIEW ON PHONE */
+@media (pointer: coarse) and (min-width: 900px) and (max-width: 1200px) {
+    .surgicals-theme .hero-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .surgicals-theme .hero-col-left,
+    .surgicals-theme .hero-col-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .surgicals-theme .hero-title-line {
+        text-align: center;
+    }
+
+    .surgicals-theme .hero-slideshow {
+        width: min(100%, 520px);
+        margin: 0 auto;
+    }
+
+    .surgicals-theme .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .surgicals-theme .prod-grid,
+    .surgicals-theme .pcat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* KEYFRAMES */
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ── STATS BAR ── */
+.surgicals-theme .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: linear-gradient(135deg, rgba(8, 18, 33, 1) 0%, rgba(12, 68, 124, 1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 50px 5%;
+    position: relative;
+    z-index: 50;
+    width: 92%;
+    max-width: 1300px;
+    margin: 80px auto 40px;
+    /* Shadow removed to eliminate glow */
+}
+
+.surgicals-theme .stat-item {
+    text-align: center;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .stat-item:hover {
+    transform: translateY(-8px);
+}
+
+.surgicals-theme .stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.surgicals-theme .stat-num {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.surgicals-theme .stat-num span {
+    color: var(--amber);
+    font-size: 32px;
+    margin-left: 2px;
+}
+
+.surgicals-theme .stat-lbl {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* ── STRIP ── */
+.surgicals-theme .strip {
+    margin-top: 68px;
+    background-color: #C97A15;
+    border-top: 1px solid var(--border);
+    padding: 12px 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.surgicals-theme .strip-track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    gap: 64px;
+}
+
+.surgicals-theme .strip-item {
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.surgicals-theme .strip-item::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+}
+
+/* ── SECTIONS ── */
+.surgicals-theme .section {
+    padding: 60px 5% 0px;
+    /* Reduced vertical padding for better density */
+    margin-bottom: 0;
+}
+
+.surgicals-theme #products.section {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+.surgicals-theme #about.section {
+    padding-top: 10px;
+}
+
+.surgicals-theme .section.alt {
+    background: var(--bg);
+}
+
+.surgicals-theme .s-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.surgicals-theme .s-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    color: var(--text);
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.surgicals-theme .s-title em {
+    font-style: italic;
+    color: var(--blue);
+}
+
+.surgicals-theme .s-sub {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.75;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .surgicals-theme .s-sub {
+        white-space: normal;
+        max-width: 520px;
+        width: 100%;
+    }
+}
+
+.surgicals-theme .s-head {
+    margin-bottom: 48px;
+}
+
+.surgicals-theme .s-head.center {
+    text-align: center;
+}
+
+.surgicals-theme .s-head.center .s-sub {
+    margin: 0 auto;
+}
+
+.surgicals-theme .section-visual {
+    width: 100%;
+    height: clamp(180px, 28vw, 300px);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: -6px 0 40px;
+    border: 1px solid var(--border);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .section-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.surgicals-theme .section-visual.dark {
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .section-visual.contact {
+    margin-bottom: 32px;
+}
+
+/* ── SHOWCASE BAND ── */
+.surgicals-theme .showcase-band {
+    padding: 100px 5%;
+    background: var(--white);
+}
+
+.surgicals-theme .showcase-inner {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    gap: 24px;
+    height: 500px;
+}
+
+.surgicals-theme .sc-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.surgicals-theme .sc-img {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.surgicals-theme .sc-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 901px) {
+    .surgicals-theme .sc-img:hover img {
+        transform: scale(1.08);
+        /* crisp hover zoom */
+    }
+}
+
+.surgicals-theme .sc-tall {
+    flex: 1.2;
+    width: 0;
+}
+
+.surgicals-theme .sc-short {
+    flex: 1;
+}
+
+.surgicals-theme .sc-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(4, 44, 83, 0.75), transparent);
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 28px 14px 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (min-width: 901px) {
+    .surgicals-theme .sc-img:hover .sc-label {
+        padding-bottom: 24px;
+        background: linear-gradient(to top, rgba(4, 44, 83, 0.95) 10%, transparent);
+    }
+}
+
+.surgicals-theme .showcase-inner-4col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.surgicals-theme .showcase-inner-4col>* {
+    min-width: 0;
+}
+
+@media(max-width:768px) {
+    .surgicals-theme .showcase-inner-4col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .surgicals-theme .showcase-inner {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .surgicals-theme .sc-tall {
+        width: 100%;
+        height: 200px;
+    }
+
+    .surgicals-theme .sc-col {
+        flex-direction: row;
+    }
+
+    .surgicals-theme .sc-short {
+        height: 140px;
+        flex: 1;
+    }
+}
+
+/* ── ABOUT SECTION ── */
+.surgicals-theme .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: flex-start;
+    /* Pulls content to the top to eliminate internal gaps */
+}
+
+.surgicals-theme .desktop-about-title {
+    display: block;
+}
+
+.surgicals-theme .mobile-about-title {
+    display: none;
+}
+
+.surgicals-theme .about-visual {
+    position: relative;
+}
+
+.surgicals-theme .about-img {
+    position: relative;
+    top: -50px;
+    z-index: 2;
+    border-radius: var(--radius-lg);
+    overflow: visible;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .about-chip {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--navy);
+    padding: 22px 30px;
+    border-radius: 16px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+    text-align: center;
+}
+
+.surgicals-theme .about-chip strong {
+    color: var(--amber);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.surgicals-theme .about-chip span {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+@media(max-width: 768px) {
+    .surgicals-theme .about-chip {
+        bottom: -16px;
+        right: -8px;
+        padding: 16px 22px;
+    }
+
+    .surgicals-theme .about-chip strong {
+        font-size: 24px;
+    }
+
+    .surgicals-theme .about-chip span {
+        font-size: 9px;
+    }
+}
+
+@media(min-width: 1101px) {
+    .surgicals-theme .about-img {
+        margin-top: 50px;
+    }
+}
+
+.surgicals-theme .about-facts {
+    list-style: none;
+    margin-top: 40px;
+    display: grid;
+    gap: 24px;
+}
+
+.surgicals-theme .about-fact {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: none !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.surgicals-theme .about-fact:hover {
+    transform: translateX(10px);
+    box-shadow: none !important;
+    border-color: var(--blue);
+}
+
+.surgicals-theme .about-fact:hover .fact-icon {
+    background: var(--blue);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.surgicals-theme .fact-icon {
+    width: 44px;
+    height: 44px;
+    background: #F1F5F9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-mid);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .fact-icon svg {
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.surgicals-theme .fact-text strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-soft);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.surgicals-theme .fact-text p {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.surgicals-theme .fact-value {
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.surgicals-theme .proprietor-name {
+    font-weight: bolder;
+    font-size: 15px;
+    color: var(--navy);
+    letter-spacing: 0.39px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ── PRODUCTS ── */
+.surgicals-theme .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.surgicals-theme .prod-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: default;
+    will-change: transform, box-shadow;
+}
+
+.surgicals-theme .prod-card:hover {
+    transform: translateY(-8px);
+    box-shadow: none !important;
+    border-color: var(--blue-soft);
+}
+
+.surgicals-theme .prod-top {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.surgicals-theme .prod-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+@media (min-width: 901px) {
+    .surgicals-theme .prod-card:hover .prod-top img {
+        transform: scale(1.06);
+    }
+}
+
+.surgicals-theme .prod-top-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.surgicals-theme .prod-top svg {
+    width: 42px;
+    height: 42px;
+    fill: none;
+    stroke-width: 1.5;
+    opacity: 0.7;
+}
+
+.surgicals-theme .prod-body {
+    padding: 18px 16px;
+}
+
+.surgicals-theme .prod-body h3 {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 7px;
+}
+
+.surgicals-theme .prod-body p {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.surgicals-theme .prod-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.surgicals-theme .ptag {
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--bg);
+    color: var(--text-mid);
+}
+
+/* ── WHY CHOOSE US ── */
+.surgicals-theme .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.surgicals-theme .why-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    transition: all 0.01s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .why-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--cyan);
+    box-shadow: 0 15px 35px -12px rgba(6, 182, 212, 0.35);
+}
+
+.surgicals-theme .why-card:hover .why-icon svg {
+    animation: bounceIcon 0.6s ease;
+}
+
+@keyframes bounceIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.surgicals-theme .why-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(6, 182, 212, 0.15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    color: var(--cyan);
+}
+
+.surgicals-theme .why-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.surgicals-theme .why-card h3 {
+    color: var(--white);
+    font-size: 22px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.surgicals-theme .why-card p {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+
+/* ── BRANDS ── */
+.surgicals-theme .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.surgicals-theme .marquee-track {
+    display: contents;
+    /* Allows grid items to align to brands-grid */
+}
+
+.surgicals-theme .brand-tile.duplicate {
+    display: none;
+}
+
+.surgicals-theme .brand-tile {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 40px 20px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.surgicals-theme .brand-logo-wrapper {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.surgicals-theme .brand-logo-wrapper img {
+    max-width: 85%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.surgicals-theme .brand-tile .status {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+}
+
+
+/* ── LICENSES ── */
+.surgicals-theme .lic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.surgicals-theme .lic-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 40px 32px;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .lic-card:hover {
+    background: var(--white);
+    border-color: var(--blue);
+    /* Shadow removed to eliminate glow */
+    transform: translateY(-8px);
+}
+
+.surgicals-theme .lic-card:hover svg {
+    color: var(--amber);
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.surgicals-theme .lic-card svg {
+    width: 48px;
+    height: 48px;
+    color: var(--blue);
+    margin-bottom: 24px;
+    stroke-width: 1.5;
+    fill: none;
+    stroke: currentColor;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .lic-card h4 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.surgicals-theme .lic-card p {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+
+/* ── REDUNDANT LIC STYLES REMOVED (Merged above) ── */
+
+
+/* ── SERVICES ── */
+.surgicals-theme .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.surgicals-theme .svc-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    background: var(--white);
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Shadow removed to eliminate glow */
+}
+
+.surgicals-theme .svc-card:hover {
+    border-color: var(--blue);
+    /* Shadow removed to eliminate glow */
+    transform: translateY(-8px);
+}
+
+.surgicals-theme .svc-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: var(--blue-light);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .svc-card:hover .svc-icon {
+    background: var(--blue);
+    color: var(--white);
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .svc-icon svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+.surgicals-theme .svc-content h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.surgicals-theme .svc-content p {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.6;
+}
+
+
+/* ── TESTIMONIALS ── */
+.surgicals-theme .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.surgicals-theme .testi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: none !important;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .testi-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 80px;
+    font-family: 'Instrument Serif', serif;
+    color: var(--blue-light);
+    line-height: 1;
+    z-index: 0;
+    transition: color 0.4s ease;
+}
+
+.surgicals-theme .testi-card:hover {
+    transform: translateY(-10px);
+    box-shadow: none !important;
+    border-color: var(--blue);
+}
+
+.surgicals-theme .testi-card:hover::before {
+    color: rgba(26, 95, 168, 0.12);
+}
+
+.surgicals-theme .testi-stars {
+    color: var(--amber);
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.surgicals-theme .testi-card blockquote {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Default: show full feedback on desktop */
+.surgicals-theme #testimonials .feedback-mobile {
+    display: none;
+}
+
+.surgicals-theme .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.surgicals-theme .tav {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .tav.amber {
+    background: var(--amber);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .tav.green {
+    background: #0D9488;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .tavi strong {
+    font-size: 15px;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.surgicals-theme .tavi small {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+
+/* ── CONTACT SECTION ── */
+.surgicals-theme .contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    background: var(--navy);
+    border-radius: var(--radius-lg);
+    padding: 80px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .contact-wrap::before {
+    content: '';
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26, 95, 168, 0.15) 0%, transparent 70%);
+}
+
+.surgicals-theme .contact-left {
+    position: relative;
+    z-index: 1;
+}
+
+.surgicals-theme .contact-left h2 {
+    font-size: 40px;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.surgicals-theme .contact-left p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin-bottom: 48px;
+}
+
+.surgicals-theme .contact-facts {
+    display: grid;
+    gap: 32px;
+}
+
+.surgicals-theme .cf {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.surgicals-theme .cf-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cyan);
+}
+
+.surgicals-theme .cf-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.surgicals-theme .cf-lbl {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 4px;
+}
+
+.surgicals-theme .cf-val {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.surgicals-theme .cf-val a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.surgicals-theme .cf-val a:hover {
+    color: var(--cyan);
+}
+
+.surgicals-theme .contact-form-wrap {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 48px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 1;
+}
+
+.surgicals-theme .contact-form-wrap h3 {
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 32px;
+}
+
+.surgicals-theme .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.surgicals-theme .fg {
+    margin-bottom: 20px;
+}
+
+.surgicals-theme .fg label {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
+}
+
+.surgicals-theme .fg input,
+.surgicals-theme .fg select,
+.surgicals-theme .fg textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color-scheme: dark;
+    resize: vertical;
+}
+
+.surgicals-theme .fg select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 18px;
+    padding-right: 48px;
+}
+
+.surgicals-theme .fg select option {
+    background-color: #0d1b2a;
+    /* Matches --navy-light */
+    color: var(--white);
+    padding: 12px;
+}
+
+.surgicals-theme .fg input:focus,
+.surgicals-theme .fg textarea:focus,
+.surgicals-theme .fg select:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--cyan);
+    box-shadow: none !important;
+    outline: none;
+}
+
+.surgicals-theme .form-btns {
+    display: flex;
+    gap: 16px;
+}
+
+.surgicals-theme .btn-wa {
+    background: #25D366;
+    color: var(--white);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgicals-theme .btn-wa:hover {
+    background: #1eba58;
+    transform: translateY(-3px);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .btn-mail {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.surgicals-theme .btn-mail:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ── MAP ── */
+.surgicals-theme .map-band {
+    padding: 0 5% 72px;
+}
+
+.surgicals-theme .map-box {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 300px;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .map-box svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 1.5;
+}
+
+.surgicals-theme .map-box p {
+    font-size: 13.5px;
+    color: var(--text-soft);
+}
+
+.surgicals-theme .map-box a {
+    background: var(--blue);
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.surgicals-theme .map-box a:hover {
+    background: var(--blue-mid);
+}
+
+/* ── CTA BANNER ── */
+.surgicals-theme .cta-banner {
+    position: relative;
+    overflow: hidden;
+    margin: 0 5% 0;
+    margin-top: none;
+    border-radius: var(--radius-lg);
+    padding: 56px 48px;
+    background: var(--blue-dark);
+}
+
+.surgicals-theme .cta-banner-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1585435557343-3b348031a41f?w=1400&q=70&auto=format&fit=crop') center/cover no-repeat;
+    opacity: 0.13;
+}
+
+.surgicals-theme .cta-banner-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.surgicals-theme .cta-banner h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.9rem;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.surgicals-theme .cta-banner h2 em {
+    font-style: italic;
+    color: var(--blue-soft);
+}
+
+.surgicals-theme .cta-banner p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+}
+
+.surgicals-theme .cta-banner-btns {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.surgicals-theme .btn-blue {
+    background: var(--blue);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.surgicals-theme .btn-blue:hover {
+    transform: translateY(-2px);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .btn-ghost {
+    background: transparent;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.surgicals-theme .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+@media(max-width:768px) {
+    .surgicals-theme .cta-banner {
+        margin: 0;
+        border-radius: 0;
+        padding: 40px 5%;
+    }
+
+    .surgicals-theme .cta-banner-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+/* ── FAQ SECTION ── */
+.surgicals-theme .faq-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.surgicals-theme .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.surgicals-theme .faq-item:hover {
+    border-color: var(--blue);
+}
+
+.surgicals-theme .faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 24px 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.surgicals-theme .faq-q svg {
+    width: 20px;
+    height: 20px;
+    color: var(--blue);
+    stroke-width: 2.5;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    flex-shrink: 0;
+}
+
+.surgicals-theme .faq-q.open svg {
+    transform: rotate(180deg);
+}
+
+.surgicals-theme .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    padding: 0 32px;
+}
+
+.surgicals-theme .faq-a.open {
+    max-height: 200px;
+    padding: 0 32px 32px;
+}
+
+
+/* ── FOOTER ── */
+.surgicals-theme footer {
+    background: var(--navy);
+    padding: 100px 5% 0;
+    color: var(--white);
+    margin-top: 15px;
+}
+
+.surgicals-theme .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: -50px;
+}
+
+.surgicals-theme .fg-about p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 24px;
+    max-width: 320px;
+}
+
+.surgicals-theme .foot-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.surgicals-theme .foot-social a {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) {
+    .surgicals-theme .foot-social a:hover {
+        background: var(--blue);
+        transform: translateY(-5px);
+        box-shadow: none !important;
+    }
+}
+
+.surgicals-theme .foot-social svg {
+    width: 20px;
+    height: 20px;
+}
+
+.surgicals-theme .fg-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.surgicals-theme .fg-col ul {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+}
+
+.surgicals-theme .fg-col ul a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+}
+
+@media (hover: hover) {
+    .surgicals-theme .fg-col ul a:hover {
+        color: #78b2f1 !important;
+        -webkit-text-fill-color: #78b2f1 !important;
+        font-weight: 600;
+        transform: translateX(4px);
+    }
+}
+
+.surgicals-theme .fg-col ul a:active {
+    opacity: 0.7;
+}
+
+.surgicals-theme .fg-col ul a:visited,
+.surgicals-theme .fg-col ul a:focus {
+    color: rgba(255, 255, 255, 0.65);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.65);
+    outline: none;
+}
+
+.surgicals-theme .fg-col ul a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.surgicals-theme .foot-ci {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.surgicals-theme .foot-ci svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    fill: none;
+    /* Prevents icons from looking like solid boxes */
+    stroke: var(--amber);
+    /* Professional accent color */
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.surgicals-theme .foot-ci svg path,
+.surgicals-theme .foot-ci svg circle,
+.surgicals-theme .foot-ci svg polyline {
+    /* Ensuring all parts of the SVG share the same stroke/fill logic */
+    stroke: inherit;
+    fill: inherit;
+}
+
+.surgicals-theme .foot-ci p,
+.surgicals-theme .foot-ci a {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.surgicals-theme .footer-bottom {
+    padding: 18px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.surgicals-theme .footer-bottom-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.surgicals-theme .footer-bottom .copyright-text {
+    background: linear-gradient(90deg, #c97a15 0%, #f0c36a 38%, #78b2f1 72%, #1a5fa8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 800;
+    font-size: 15px;
+    margin: 0;
+    transition: all 0.4s ease;
+}
+
+.surgicals-theme .footer-bottom .dev-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+}
+
+.surgicals-theme .footer-bottom .dev-text a {
+    background: linear-gradient(90deg, #8b5cf6, #c084fc, #818cf8, #a78bfa, #8b5cf6);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-right: 0 !important;
+    animation: kreateup-shimmer 3s linear infinite, kreateup-glow-purple 2s ease-in-out infinite;
+    transition: filter 0.3s ease;
+}
+
+@keyframes kreateup-shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+@keyframes kreateup-glow-purple {
+    0%, 100% { filter: drop-shadow(0 0 3px rgba(139, 92, 246, 0.0)); }
+    50% { filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.65)); }
+}
+
+.surgicals-theme .footer-bottom .dev-text a:hover {
+    filter: brightness(1.25) drop-shadow(0 0 12px rgba(139, 92, 246, 0.85));
+    animation-play-state: paused;
+}
+
+@media (hover: hover) {
+    .surgicals-theme .footer-bottom .copyright-text:hover {
+        filter: brightness(1.2);
+        transform: scale(1.02);
+    }
+}
+
+.surgicals-theme .footer-bottom a {
+    color: white;
+    text-decoration: none;
+    margin-right: 80px;
+    transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+    .surgicals-theme .footer-bottom a:hover {
+        color: var(--blue-light);
+    }
+}
+
+
+/* ── WA FLOAT ── */
+.surgicals-theme .wa-float {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    z-index: 900;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.surgicals-theme .wa-float:hover {
+    transform: scale(1.12);
+}
+
+@keyframes waFloat {
+
+    0%,
+    100% {
+        box-shadow: none !important;
+        transform: translateY(0);
+    }
+
+    50% {
+        box-shadow: none !important;
+        transform: translateY(-6px);
+    }
+}
+
+.surgicals-theme .wa-float svg {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+}
+
+/* ── KEYFRAMES ── */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes logoGradientFlow {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ── COLORS for product tops (flat — no gradients) ── */
+.surgicals-theme .p1,
+.surgicals-theme .p2,
+.surgicals-theme .p3,
+.surgicals-theme .p4,
+.surgicals-theme .p5,
+.surgicals-theme .p6 {
+    background: #f1f5f9;
+}
+
+.surgicals-theme .p1 svg {
+    stroke: #2E7D4F;
+}
+
+.surgicals-theme .p2 svg {
+    stroke: #1A5FA8;
+}
+
+.surgicals-theme .p3 svg {
+    stroke: #C97A15;
+}
+
+.surgicals-theme .p4 svg {
+    stroke: #7A3FCC;
+}
+
+.surgicals-theme .p5 svg {
+    stroke: #CC3F3F;
+}
+
+.surgicals-theme .p6 svg {
+    stroke: #0E7C7B;
+}
+
+/* ── PRODUCT CATEGORIES INTERACTIVE ── */
+.surgicals-theme .pcat-wrap {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    min-width: 0;
+}
+
+.surgicals-theme .pcat-grid {
+    display: grid;
+    gap: 16px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.surgicals-theme .pcat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.surgicals-theme .pcat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--blue);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.surgicals-theme .pcat-card:hover {
+    border-color: var(--blue);
+    transform: translateX(12px);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .pcat-card:hover::before {
+    transform: scaleY(1);
+}
+
+.surgicals-theme .pcat-card.active {
+    border-color: var(--blue);
+    background: var(--white);
+    box-shadow: none !important;
+    transform: translateX(12px);
+}
+
+.surgicals-theme .pcat-card.active::before {
+    transform: scaleY(1);
+}
+
+
+.surgicals-theme .pcat-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.surgicals-theme .pcat-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 28% center;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.surgicals-theme .p1 img,
+.surgicals-theme .p2 img {
+    object-position: 48% center;
+}
+
+.surgicals-theme .p3 img {
+    object-position: 35% center;
+}
+
+@media (min-width: 901px) {
+    .surgicals-theme .pcat-card:hover .pcat-img img {
+        transform: scale(1.15);
+    }
+}
+
+.surgicals-theme .pcat-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--navy);
+}
+
+.surgicals-theme .pcat-info p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.4;
+}
+
+.surgicals-theme .pcat-arrow {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.surgicals-theme .pcat-card.active .pcat-arrow {
+    color: var(--blue);
+    transform: translateX(5px);
+}
+
+/* Detail panel */
+.surgicals-theme .pcat-panel {
+    position: sticky;
+    top: 100px;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.surgicals-theme .pcat-detail {
+    display: none;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: none !important;
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+.surgicals-theme .pcat-detail.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.surgicals-theme .pcd-header {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.surgicals-theme .pcd-header>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.surgicals-theme .pcd-header-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(4, 44, 83, 0.85) 0%, rgba(4, 44, 83, 0.3) 60%, transparent 100%);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.surgicals-theme .pcd-header h2 {
+    color: var(--white);
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.surgicals-theme .pcd-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.surgicals-theme .pcd-body {
+    padding: 40px;
+    min-width: 0;
+}
+
+.surgicals-theme .prod-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+    min-width: 0;
+}
+
+.surgicals-theme .pg-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 1.5px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    min-width: 0;
+}
+
+.surgicals-theme .pg-card:hover {
+    background: var(--white);
+    border-color: var(--blue);
+    box-shadow: none !important;
+    transform: translateY(-8px) scale(1.02);
+}
+
+
+.surgicals-theme .pg-img {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+
+.surgicals-theme .pg-img img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.surgicals-theme .pg-info {
+    min-width: 0;
+}
+
+.surgicals-theme .pg-info strong {
+    display: block;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 4px;
+    overflow-wrap: break-word;
+}
+
+.surgicals-theme .pg-info span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.surgicals-theme .pcd-enquire {
+    background: #25D366;
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.surgicals-theme .pcd-enquire:hover {
+    background: #1eba58;
+    box-shadow: none !important;
+}
+
+
+
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px) {
+    .surgicals-theme .pcat-wrap {
+        grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .surgicals-theme .pcd-body {
+        padding: 28px;
+    }
+
+    .surgicals-theme .prod-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .surgicals-theme .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0px !important;
+    }
+
+    .surgicals-theme .hero-col-left {
+        flex: 1 1 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .surgicals-theme .hero-col-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .surgicals-theme .hero-sub {
+        max-width: 90%;
+    }
+
+    .surgicals-theme .hero-value-props {
+        justify-content: center;
+    }
+
+    .surgicals-theme .hero-btns {
+        justify-content: center;
+        width: 100%;
+        margin-top: 12px !important;
+    }
+
+    .surgicals-theme .hero-value-props {
+        justify-content: center;
+        margin-bottom: 12px !important;
+    }
+
+    .surgicals-theme .hero-sub {
+        max-width: 90%;
+        margin-bottom: 12px !important;
+    }
+
+    .surgicals-theme .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0;
+    }
+
+    .surgicals-theme .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .surgicals-theme .about-facts {
+        gap: 16px;
+        padding-bottom: 40px;
+        /* Space for WhatsApp button */
+    }
+
+    .surgicals-theme .about-fact {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .surgicals-theme .fact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .surgicals-theme .about-img {
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    .surgicals-theme .desktop-about-title {
+        display: none !important;
+    }
+
+    .surgicals-theme .mobile-about-title {
+        display: block !important;
+        text-align: center;
+        margin-bottom: -10px;
+    }
+
+    /* Disable hover effects on mobile */
+    .surgicals-theme .stat-item:hover,
+    .surgicals-theme .why-card:hover,
+    .surgicals-theme .why-card:active,
+    .surgicals-theme .lic-card:hover,
+    .surgicals-theme .lic-card:active,
+    .surgicals-theme .svc-card:hover,
+    .surgicals-theme .svc-card:active,
+    .surgicals-theme .prod-card:hover,
+    .surgicals-theme .prod-card:active,
+    .surgicals-theme .pcat-card:hover,
+    .surgicals-theme .pcat-card:active,
+    .surgicals-theme .pcat-card.active,
+    .surgicals-theme .pg-card:hover,
+    .surgicals-theme .pg-card:active,
+    .surgicals-theme .about-fact:hover,
+    .surgicals-theme .about-fact:active,
+    .surgicals-theme .hs-thumb:hover,
+    .surgicals-theme .hs-thumb:active,
+    .surgicals-theme .sc-img:hover,
+    .surgicals-theme .sc-img:active {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .surgicals-theme .pcat-card:not(.active):hover {
+        background: rgba(255, 255, 255, 0.02) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .surgicals-theme .pcat-card:hover::before,
+    .surgicals-theme .pcat-card.active::before,
+    .surgicals-theme .pcat-card:active::before {
+        transform: none !important;
+        display: none !important;
+    }
+
+    .surgicals-theme .pcat-card:hover .pcat-img img,
+    .surgicals-theme .pcat-card:active .pcat-img img,
+    .surgicals-theme .prod-card:hover .prod-top img,
+    .surgicals-theme .prod-card:active .prod-top img,
+    .surgicals-theme .sc-img:hover img,
+    .surgicals-theme .sc-img:active img {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .surgicals-theme .sc-img:hover .sc-label,
+    .surgicals-theme .sc-img:active .sc-label {
+        padding-bottom: 12px !important;
+        background: linear-gradient(to top, rgba(4, 44, 83, 0.75), transparent) !important;
+    }
+}
+
+@media(max-width:900px) {
+    .surgicals-theme .pcat-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .surgicals-theme .pcat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .surgicals-theme .pcat-card {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .surgicals-theme .pcat-img {
+        width: 44px;
+        height: 44px;
+        margin: 0 auto;
+    }
+
+    /* Brands Marquee for Mobile */
+    .surgicals-theme .brands-grid {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .surgicals-theme .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marqueeScroll 15s linear infinite;
+        gap: 20px;
+        padding: 5px 0;
+    }
+
+    .surgicals-theme .marquee-track .brand-tile {
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .surgicals-theme .marquee-track .brand-tile.duplicate {
+        display: flex;
+        /* Make visible for marquee block */
+    }
+
+
+    .surgicals-theme .pcat-info p {
+        display: none;
+    }
+
+    .surgicals-theme .pcat-arrow {
+        display: none;
+    }
+
+    .surgicals-theme .pcat-panel {
+        position: static;
+    }
+
+    .surgicals-theme .pcat-card::before {
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+    .surgicals-theme .section {
+        padding: 36px 5%;
+    }
+
+    .surgicals-theme #why-us {
+        padding: 36px 5% !important;
+    }
+
+    .surgicals-theme .showcase-band {
+        padding-top: 28px !important;
+        padding-bottom: 32px !important;
+        margin-top: -2px;
+        /* Pull it up carefully to completely cover any subpixel blue line from the Hero section */
+        position: relative;
+        z-index: 20;
+    }
+
+    .surgicals-theme footer {
+        padding-top: 48px;
+    }
+
+    .surgicals-theme #products.section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .surgicals-theme #products .s-head {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .surgicals-theme #products .pcat-detail {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .surgicals-theme .prod-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .surgicals-theme .pcd-body {
+        padding: 12px 0;
+    }
+
+    .surgicals-theme .pg-card {
+        padding: 4px 8px;
+        border-radius: 10px;
+    }
+
+    .surgicals-theme .pg-img {
+        padding: 6px;
+        margin-bottom: 4px;
+    }
+
+    .surgicals-theme .pg-info {
+        line-height: 1.2;
+    }
+
+    .surgicals-theme .pcd-enquire {
+        padding: 10px 12px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .surgicals-theme .pcd-enquire svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .surgicals-theme .pg-info strong {
+        font-size: 11px;
+    }
+
+    .surgicals-theme .pg-info span {
+        font-size: 10px;
+    }
+
+    .surgicals-theme #hero {
+        padding: 40px 5% 60px;
+        overflow: visible !important;
+        /* This is the CRITICAL fix - prevents the wave from being cut off */
+    }
+
+    .surgicals-theme .hero-wave {
+        bottom: -10px !important;
+        /* Force massive overlap past anyone's rendering engine gap */
+    }
+
+    .surgicals-theme .hero-sub {
+        max-width: 100%;
+        margin-bottom: 16px !important;
+    }
+
+    .surgicals-theme .hero-value-props {
+        margin-bottom: 16px !important;
+        justify-content: center;
+    }
+
+    .surgicals-theme .hero-btns {
+        margin-top: 0px !important;
+        justify-content: center;
+    }
+
+    .surgicals-theme .hero-btns .btn-primary,
+    .surgicals-theme .hero-btns .btn-secondary {
+        margin-top: 8px !important;
+    }
+
+    .surgicals-theme .hero-col-right {
+        margin-top: 10px !important;
+    }
+
+    .surgicals-theme .s-head {
+        margin-bottom: 24px;
+    }
+
+    .surgicals-theme .section-visual {
+        height: 170px;
+        margin-bottom: 24px;
+    }
+
+    .surgicals-theme .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px 5%;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: none !important;
+    }
+
+    .surgicals-theme .nav-links.open {
+        display: flex;
+    }
+
+    .surgicals-theme .hamburger {
+        display: flex;
+    }
+
+    .surgicals-theme .nav-phone {
+        display: none;
+    }
+
+    .surgicals-theme .nav-right {
+        gap: 4px;
+    }
+
+    @media (min-width: 360px) {
+        .surgicals-theme .nav-right {
+            gap: 8px;
+        }
+    }
+
+    .surgicals-theme .logo-img {
+        height: 60px !important;
+        width: auto !important;
+    }
+
+    .surgicals-theme .nav-cta,
+    .surgicals-theme .nav-contact-btn {
+        height: 32px !important;
+        padding: 0 10px !important;
+        font-size: 11px !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+    }
+
+    .surgicals-theme .nav-cta {
+        border: 1.5px solid transparent !important;
+    }
+
+    .surgicals-theme .nav-contact-btn svg {
+        width: 13px !important;
+        height: 13px !important;
+    }
+
+    .surgicals-theme .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 20px auto 16px;
+        padding: 16px 3%;
+    }
+
+    @media (max-width: 480px) {
+        .surgicals-theme .stats-bar {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 10px;
+        }
+    }
+
+    .surgicals-theme .stat-num {
+        font-size: 28px;
+    }
+
+    .surgicals-theme .stat-num span {
+        font-size: 20px;
+    }
+
+    .surgicals-theme .stat-lbl {
+        font-size: 8px;
+        letter-spacing: 0.08em;
+    }
+
+    .surgicals-theme .stat-item .stat-icon {
+        display: none;
+    }
+
+    /* About chip - keep overlapping image on mobile */
+    .surgicals-theme #about .about-chip {
+        position: absolute;
+        bottom: 8px;
+        right: 0px;
+    }
+
+    .surgicals-theme .products-grid,
+    .surgicals-theme .testi-grid,
+    .surgicals-theme .lic-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .surgicals-theme .why-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 1fr;
+        /* Forces all cards in all rows to have the same height */
+        gap: 10px;
+    }
+
+    .surgicals-theme .why-card {
+        padding: 12px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 12px;
+    }
+
+    .surgicals-theme .why-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        margin-bottom: 0;
+        border-radius: 12px;
+    }
+
+    .surgicals-theme .why-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .surgicals-theme .why-card h3 {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .surgicals-theme .why-card p {
+        font-size: 11px;
+    }
+
+    .surgicals-theme .svc-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .surgicals-theme .svc-card {
+        flex-direction: row;
+        padding: 12px;
+        gap: 12px;
+        text-align: left;
+        align-items: center;
+    }
+
+    .surgicals-theme .svc-card h3 {
+        font-size: 12px;
+    }
+
+    .surgicals-theme .svc-card p {
+        display: none;
+    }
+
+    .surgicals-theme .svc-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        border-radius: 10px;
+    }
+
+    .surgicals-theme .svc-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .surgicals-theme .svc-content h3 {
+        font-size: 16px;
+    }
+
+    .surgicals-theme .svc-content p {
+        font-size: 13px;
+    }
+
+    .surgicals-theme .testi-card {
+        padding: 24px;
+    }
+
+    .surgicals-theme .testi-card::before {
+        font-size: 50px;
+        top: 10px;
+        right: 15px;
+    }
+
+    .surgicals-theme .testi-stars {
+        margin-bottom: 12px;
+    }
+
+    .surgicals-theme .testi-card blockquote {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .surgicals-theme .tav {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .surgicals-theme .tavi strong {
+        font-size: 13px;
+    }
+
+    .surgicals-theme .tavi small {
+        font-size: 11px;
+    }
+
+    .surgicals-theme .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .surgicals-theme .brands-grid .brand-tile:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - 24px) / 2);
+    }
+
+    .surgicals-theme #brands .brands-grid .brand-logo-wrapper img {
+        filter: none;
+        opacity: 1;
+    }
+
+    .surgicals-theme .contact-wrap {
+        grid-template-columns: 1fr;
+        padding: 64px 20px 40px;
+    }
+
+    .surgicals-theme .contact-left h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .surgicals-theme .contact-left p {
+        margin-bottom: 32px;
+    }
+
+    .surgicals-theme .contact-form-wrap {
+        padding: 32px 20px;
+    }
+
+    .surgicals-theme .cf {
+        gap: 16px;
+    }
+
+    .surgicals-theme .cf-icon {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .surgicals-theme .cf-val {
+        font-size: 14.5px;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+
+
+    .surgicals-theme .cf>div:not(.cf-icon) {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .surgicals-theme .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 20px;
+        padding-bottom: 12px;
+        margin-top: 0;
+    }
+
+    .surgicals-theme .footer-grid .fg-about {
+        grid-column: 1 / -1;
+    }
+
+    .surgicals-theme .footer-grid>.fg-col:last-child {
+        grid-column: 1 / -1;
+        margin-top: 16px;
+    }
+
+    .surgicals-theme .footer-grid .fg-col h4 {
+        margin-bottom: 20px;
+        font-size: 11px;
+        letter-spacing: 1.2px;
+    }
+
+    .surgicals-theme .footer-grid .fg-col ul {
+        gap: 10px;
+    }
+
+    .surgicals-theme .footer-grid .fg-col ul a {
+        font-size: 12px;
+    }
+
+    .surgicals-theme .lic-grid>*,
+    .surgicals-theme .lic-card {
+        padding: 20px 16px;
+    }
+
+    .surgicals-theme .lic-card h4 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .surgicals-theme .lic-card p {
+        font-size: 11px;
+    }
+
+    .surgicals-theme .lic-card svg {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 12px;
+    }
+
+    .surgicals-theme .brands-grid>*,
+    .surgicals-theme .footer-grid>*,
+    .surgicals-theme .products-grid>*,
+    .surgicals-theme .why-grid>*,
+    .surgicals-theme .testi-grid>*,
+    .surgicals-theme .lic-grid>* {
+        min-width: 0;
+    }
+
+    .surgicals-theme .pcat-card:hover,
+    .surgicals-theme .pcat-card.active {
+        transform: none;
+    }
+
+    .surgicals-theme .footer-bottom {
+        padding: 8px 0 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .surgicals-theme .footer-bottom p {
+        max-width: 100%;
+    }
+
+    .surgicals-theme .footer-bottom a {
+        margin-right: 0;
+    }
+
+    .surgicals-theme .section,
+    .surgicals-theme .showcase-band {
+        overflow-x: hidden;
+    }
+
+    /* Mobile: remove extra copy in "Why Choose Us" cards */
+    .surgicals-theme #why-us .why-card p {
+        display: none;
+    }
+
+    /* Mobile: shorten client feedback paragraphs */
+    .surgicals-theme #testimonials .testi-card blockquote {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .surgicals-theme #testimonials .feedback-full {
+        display: none;
+    }
+
+    .surgicals-theme #testimonials .feedback-mobile {
+        display: inline;
+        color: var(--text-mid);
+    }
+
+    .surgicals-theme .foot-ci a,
+    .surgicals-theme .foot-ci p {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .surgicals-theme .foot-ci:last-child {
+        margin-bottom: 0;
+    }
+
+    .surgicals-theme .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+@media(max-width:500px) {
+    .surgicals-theme .section {
+        padding: 20px 5%;
+    }
+
+    .surgicals-theme #why-us {
+        padding: 30px 5% !important;
+    }
+
+    .surgicals-theme .showcase-band {
+        padding-top: 24px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .surgicals-theme footer {
+        padding-top: 24px;
+    }
+
+    .surgicals-theme .s-head {
+        margin-bottom: 20px;
+    }
+
+    .surgicals-theme .section-visual {
+        height: 148px;
+        border-radius: 14px;
+    }
+
+    .surgicals-theme .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 32px auto 16px;
+        padding: 16px 3%;
+    }
+
+    .surgicals-theme .stat-num {
+        font-size: 22px;
+    }
+
+    .surgicals-theme .stat-num span {
+        font-size: 16px;
+    }
+
+    .surgicals-theme .stat-lbl {
+        font-size: 7px;
+    }
+
+    .surgicals-theme .pcat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .surgicals-theme .prod-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .surgicals-theme .pcd-body {
+        padding: 8px 0;
+    }
+
+    .surgicals-theme .pg-card {
+        padding: 2px 6px;
+        border-radius: 10px;
+    }
+
+    .surgicals-theme .pg-img {
+        padding: 4px;
+        margin-bottom: 2px;
+    }
+
+    .surgicals-theme .pg-info {
+        line-height: 1.1;
+    }
+
+    .surgicals-theme .pg-info strong {
+        font-size: 10px;
+    }
+
+    .surgicals-theme .pg-info span {
+        display: none;
+    }
+
+    .surgicals-theme .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .surgicals-theme .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .surgicals-theme .brands-grid .brand-tile:last-child:nth-child(odd) {
+        width: calc((100% - 12px) / 2);
+    }
+
+    .surgicals-theme .brand-tile {
+        padding: 18px 10px;
+    }
+
+    .surgicals-theme .brand-logo-wrapper {
+        height: 52px;
+        margin-bottom: 0;
+    }
+
+    .surgicals-theme .brand-logo-wrapper img {
+        max-width: 92%;
+    }
+}
+
+/* ── PRODUCT MODAL ── */
+.surgicals-theme .product-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(8, 18, 33, 0.7);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    padding: 5%;
+}
+
+.surgicals-theme .product-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.surgicals-theme .product-modal {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    max-width: 720px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: none !important;
+    transform: scale(0.9) translateY(40px);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+}
+
+.surgicals-theme .product-modal-overlay.active .product-modal {
+    transform: scale(1) translateY(0);
+}
+
+.surgicals-theme .pm-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(8, 18, 33, 0.08);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.surgicals-theme .pm-close:hover {
+    background: rgba(8, 18, 33, 0.15);
+    transform: rotate(90deg);
+}
+
+.surgicals-theme .pm-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.surgicals-theme .pm-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.surgicals-theme .pm-img-wrap {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e8eef5 100%);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+}
+
+.surgicals-theme .pm-img {
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.surgicals-theme .pm-img:hover {
+    transform: scale(1.05);
+}
+
+.surgicals-theme .pm-content {
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.surgicals-theme .pm-cat {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.surgicals-theme .pm-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.surgicals-theme .pm-desc {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.surgicals-theme .pm-wa {
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.surgicals-theme .pm-wa:hover {
+    background: #1eba58;
+    transform: translateY(-2px);
+    box-shadow: none !important;
+}
+
+.surgicals-theme .pm-wa svg {
+    flex-shrink: 0;
+}
+
+@media(max-width:768px) {
+    .surgicals-theme .pm-body {
+        grid-template-columns: 1fr;
+    }
+
+    .surgicals-theme .pm-img-wrap {
+        min-height: 200px;
+        padding: 24px;
+    }
+
+    .surgicals-theme .pm-content {
+        padding: 24px;
+    }
+
+    .surgicals-theme .pm-name {
+        font-size: 22px;
+    }
+}
+
+/* ── MOBILE ANIMATION OPTIMIZATION ── */
+@media (max-width: 768px) {
+    .surgicals-theme .reveal {
+        transition-duration: 0.4s !important;
+        transition-delay: 0s !important;
+        transform: translateY(20px) !important;
+    }
+
+    .surgicals-theme .reveal.visible {
+        transform: translateY(0) !important;
+    }
+
+    .surgicals-theme .reveal-up {
+        transform: translateY(20px) !important;
+    }
+
+    .surgicals-theme .reveal-left {
+        transform: translateX(-20px) !important;
+    }
+
+    .surgicals-theme .reveal-right {
+        transform: translateX(20px) !important;
+    }
+
+    .surgicals-theme .reveal-scale {
+        transform: scale(0.95) !important;
+    }
+
+    .surgicals-theme #hero::after {
+        display: none !important;
+    }
+
+    .surgicals-theme #hero::before {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+
+    .surgicals-theme .hs-slide.active .hs-bg {
+        animation: none !important;
+        transform: scale(1) !important;
+    }
+
+    .surgicals-theme .hs-bg {
+        transform: scale(1) !important;
+        transition: none !important;
+    }
+
+    /* Hide profile avatar in client feedback for mobile */
+    .surgicals-theme #testimonials .testi-author .tav {
+        display: none;
+    }
+
+    /* Decrease size of grid in client feedback for mobile */
+    .surgicals-theme .testi-grid {
+        gap: 12px;
+    }
+
+    .surgicals-theme .testi-card {
+        padding: 16px;
+    }
+
+    .surgicals-theme .testi-card blockquote {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    /* Remove paragraph text in our services grids for mobile */
+    .surgicals-theme .svc-card p,
+    .surgicals-theme .svc-content p {
+        display: none;
+    }
+
+    .surgicals-theme .contact-facts {
+        display: grid;
+        gap: 24px;
+        margin-top: 24px;
+        margin-bottom: 32px;
+    }
+
+    .surgicals-theme .cf-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .surgicals-theme .cf-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .surgicals-theme .cf-lbl {
+        font-size: 11px;
+    }
+
+    .surgicals-theme .cf-val {
+        font-size: 15px;
+    }
+
+    /* Make textarea smaller like single line and fit placeholder */
+    .surgicals-theme #f-msg {
+        height: 48px;
+        min-height: 48px;
+    }
+
+    .surgicals-theme #f-msg::placeholder {
+        font-size: 12.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Increase Whatsapp icon size and decrease spacing between Name/Phone inputs */
+    .surgicals-theme .btn-wa svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .surgicals-theme .fg {
+        margin-bottom: 10px;
+    }
+
+    .surgicals-theme .form-row {
+        gap: 10px;
+        grid-template-columns: 1fr;
+        margin-bottom: 10px;
+    }
+
+    .surgicals-theme .form-row .fg {
+        margin-bottom: 0;
+    }
+
+    /* Fix right side cutoff and decrease empty gap in contact section for mobile */
+    .surgicals-theme .contact-wrap {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 40px 16px;
+    }
+
+    .surgicals-theme .contact-form-wrap {
+        padding: 0 16px 24px;
+    }
+
+    .surgicals-theme .form-btns {
+        flex-direction: column;
+    }
+
+    .surgicals-theme .contact-left p {
+        margin-bottom: 12px;
+    }
+}
+
+
+.surgicals-theme .about-enterprise-link {
+    display: inline-flex;
+    transform-origin: center;
+    color: #64748B;
+}
+
+.surgicals-theme .about-enterprise-link span {
+    background: linear-gradient(90deg, #c97a15 0%, #f0c36a 38%, #78b2f1 72%, #1a5fa8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: inline-block;
+    font-weight: 800;
+}
+
+.surgicals-theme .about-enterprise-link:hover {
+    transform: scale(1.07);
+    color: #0C447C;
+}
+
+@keyframes arrowBounceUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+.surgicals-theme .about-enterprise-link:hover .hover-bounce-arrow {
+    animation: arrowBounceUpDown 1s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════
+   PRODUCTS PAGE  (/products route)
+══════════════════════════════════════════════════ */
+
+/* ─── Hero ─── */
+.surgicals-theme .pp-hero {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: none !important;
+    z-index: 5;
+}
+
+.surgicals-theme .pp-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+    transform: scale(1.05);
+    filter: brightness(0.55);
+}
+
+.surgicals-theme .pp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 14, 30, 0.15) 0%, rgba(5, 14, 30, 0.01) 60%, transparent 100%);
+}
+
+.surgicals-theme .pp-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 48px 24px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.surgicals-theme .pp-hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.surgicals-theme .pp-hero-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    text-shadow: none !important;
+}
+
+.surgicals-theme .pp-hero-title em {
+    font-style: italic;
+    color: #93c5fd;
+}
+
+.surgicals-theme .pp-hero-sub {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1.6;
+    text-shadow: none !important;
+}
+
+/* Back button */
+.surgicals-theme .pp-back-btn {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.surgicals-theme .pp-back-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateX(-3px);
+}
+
+/* ─── Page Layout: sidebar + main ─── */
+.surgicals-theme .pp-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 220px);
+    background: #f8fafc;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    gap: 0;
+}
+
+/* ─── Sidebar ─── */
+.surgicals-theme .pp-sidebar {
+    padding: 40px 16px;
+    /* Added horizontal padding to prevent clipping on desktop */
+    border-right: 1px solid #e5e7eb;
+    position: sticky;
+    top: 72px;
+    height: fit-content;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbars but allow for padding room */
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.surgicals-theme .pp-sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    padding-left: 4px;
+}
+
+.surgicals-theme .pp-cat-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    text-align: left;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.surgicals-theme .pp-cat-tab:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.surgicals-theme .pp-cat-tab.active {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.surgicals-theme .pp-cat-tab-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.surgicals-theme .pp-cat-tab.active .pp-cat-tab-dot {
+    background: #3b82f6;
+}
+
+/* ─── Main area ─── */
+.surgicals-theme .pp-main {
+    padding: 40px 0 40px 40px;
+}
+
+/* Panel header banner */
+.surgicals-theme .pp-panel-head {
+    border-radius: var(--radius-lg, 16px);
+    overflow: hidden;
+    margin-bottom: 32px;
+    position: relative;
+    height: 160px;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .pp-panel-head-img {
+    position: relative;
+    height: 100%;
+}
+
+.surgicals-theme .pp-panel-head-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65);
+}
+
+.surgicals-theme .pp-panel-head-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 32px;
+    background: linear-gradient(to top, rgba(5, 14, 30, 0.015) 0%, rgba(5, 14, 30, 0.01) 60%, transparent 100%);
+}
+
+.surgicals-theme .pp-panel-head-overlay h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 4px;
+    text-shadow: none !important;
+}
+
+.surgicals-theme .pp-panel-head-overlay p {
+    font-size: 13px;
+    color: #ffffff;
+    text-shadow: none !important;
+}
+
+/* Product grid on /products page */
+.surgicals-theme .pp-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Clickable card variant */
+.surgicals-theme .pg-card--clickable {
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .surgicals-theme .pg-card--clickable:hover {
+        transform: translateY(-4px);
+        box-shadow: none !important;
+    }
+}
+
+/* WhatsApp category enquiry strip */
+.surgicals-theme .pp-cat-wa-wrap {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ─── Modal overlay alias ─── */
+/* ProductModal uses .pm-overlay instead of .product-modal-overlay */
+.surgicals-theme .pm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(8, 18, 33, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    animation: pmFadeIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.surgicals-theme .pm-overlay .product-modal {
+    animation: pmSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pmFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pmSlideUp {
+    from {
+        transform: scale(0.9) translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ─── Responsive: Products Page ─── */
+@media (max-width: 900px) {
+    .surgicals-theme .pp-layout {
+        grid-template-columns: 1fr;
+        padding: 0 16px 60px;
+    }
+
+    .surgicals-theme .pp-sidebar {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 24px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-height: none;
+        overflow: visible;
+        /* Changed to visible to prevent clipping shadows/borders */
+        width: 100%;
+    }
+
+    .surgicals-theme .pp-sidebar-label {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .surgicals-theme .pp-cat-tab {
+        width: 100%;
+        padding: 12px 8px;
+        font-size: 12px;
+        /* Slightly smaller for mobile */
+        margin-bottom: 0;
+        border: 1px solid #e5e7eb;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 6px;
+        word-break: break-word;
+        /* Allow long words to break if needed */
+        min-width: 0;
+        /* Allow shrinking */
+    }
+
+    .surgicals-theme .pp-cat-tab-dot {
+        margin: 0 auto;
+    }
+
+    .surgicals-theme .pp-cat-tab.active {
+        border-color: #3b82f6;
+    }
+
+    .surgicals-theme .pp-main {
+        padding: 24px 0;
+    }
+
+    .surgicals-theme .pp-hero-content {
+        padding: 0 24px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .surgicals-theme .pp-hero-tag {
+        font-size: 10px;
+    }
+
+    .surgicals-theme .pp-hero-title {
+        font-size: clamp(22px, 6vw, 32px);
+        margin-bottom: 8px;
+    }
+
+    .surgicals-theme .pp-hero-sub {
+        font-size: 13px;
+    }
+
+    .surgicals-theme .pp-hero {
+        height: 180px;
+        /* Reduced from 260px to fix much more gap on mobile */
+        align-items: flex-end;
+        /* Move content to bottom */
+        justify-content: center;
+        padding-bottom: 16px;
+        /* Push it up slightly from the absolute bottom */
+    }
+
+    .surgicals-theme .pp-panel-head {
+        height: 120px;
+    }
+
+    .surgicals-theme .pp-panel-head-overlay h2 {
+        font-size: 20px;
+    }
+
+    .surgicals-theme .pp-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .surgicals-theme .pp-back-btn {
+        position: absolute;
+        top: 78px;
+        left: 20px;
+        transform: none;
+        z-index: 10;
+        padding: 6px 12px;
+    }
+
+    .surgicals-theme .pp-back-btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 480px) {
+    .surgicals-theme .pp-back-btn span {
+        display: none;
+    }
+
+    .surgicals-theme .pp-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   LANDING PAGE — Business Selection
+   ═══════════════════════════════════════════════════ */
+
+.surgicals-theme .lp-root {
+    min-height: 100dvh;
+    background: #f7f8fa;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(26, 95, 168, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', 'Outfit', sans-serif;
+}
+
+/* Subtle dot-grid background */
+.surgicals-theme .lp-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #c8c8d0 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.surgicals-theme .lp-main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ── Header ── */
+.surgicals-theme .lp-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: lp-fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.surgicals-theme .lp-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1A5FA8;
+    background: rgba(26, 95, 168, 0.08);
+    border: 1px solid rgba(26, 95, 168, 0.18);
+    padding: 5px 14px;
+    border-radius: 50px;
+}
+
+.surgicals-theme .lp-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.surgicals-theme .lp-subheading {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+    max-width: 380px;
+    line-height: 1.6;
+}
+
+/* ── Cards Grid ── */
+.surgicals-theme .lp-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    animation: lp-fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+/* ── Individual Card ── */
+.surgicals-theme .lp-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 36px 28px 32px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: none !important;
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease;
+    outline: none;
+    overflow: hidden;
+}
+
+/* Accent stripe at top */
+.surgicals-theme .lp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent, #1A5FA8);
+    border-radius: 20px 20px 0 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+    .surgicals-theme .lp-card:hover {
+        transform: translateY(-6px) scale(1.012);
+        box-shadow:
+            0 16px 40px rgba(0, 0, 0, 0.1),
+            0 4px 12px rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .surgicals-theme .lp-card:hover::before {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    .surgicals-theme .lp-card:hover .lp-card-arrow {
+        animation: lp-arrow-sway 1s ease-in-out infinite;
+        color: var(--accent, #1A5FA8);
+    }
+}
+
+.surgicals-theme .lp-card:focus-visible {
+    box-shadow: none !important;
+}
+
+.surgicals-theme .lp-card:active {
+    transform: translateY(-2px) scale(1.005);
+}
+
+/* ── Tag badge ── */
+.surgicals-theme .lp-card-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent, #1A5FA8);
+    background: color-mix(in srgb, var(--accent, #1A5FA8) 10%, transparent);
+    padding: 3px 10px;
+    border-radius: 50px;
+    border: 1px solid color-mix(in srgb, var(--accent, #1A5FA8) 20%, transparent);
+}
+
+/* ── Logo wrapper ── */
+.surgicals-theme .lp-card-logo-wrap {
+    width: 280px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+}
+
+.surgicals-theme .lp-logo-enterprise .lp-card-logo {
+    transform: scale(1.15);
+}
+
+.surgicals-theme .lp-card-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* ── Card text ── */
+.surgicals-theme .lp-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.surgicals-theme .lp-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(16px, 2.2vw, 19px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.surgicals-theme .lp-card-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 200px;
+}
+
+/* ── Arrow icon ── */
+.surgicals-theme .lp-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    margin-top: 4px;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+/* ── Footer note ── */
+.surgicals-theme .lp-footer-note {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+    animation: lp-fade-in 1s ease 0.4s both;
+}
+
+/* ── Keyframes ── */
+@keyframes lp-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lp-arrow-sway {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+}
+
+@keyframes lp-glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        filter: brightness(1);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.4);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .surgicals-theme .lp-root {
+        background: #ffffff;
+        background-image: none;
+    }
+
+    .surgicals-theme .lp-bg-pattern {
+        display: none;
+    }
+
+    .surgicals-theme .lp-main {
+        padding: 32px 16px 24px;
+        gap: 24px;
+    }
+
+    .surgicals-theme .lp-header {
+        gap: 6px;
+    }
+
+    .surgicals-theme .lp-heading {
+        font-size: 26px;
+    }
+
+    .surgicals-theme .lp-subheading {
+        font-size: 13px;
+        max-width: 300px;
+    }
+
+    .surgicals-theme .lp-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .surgicals-theme .lp-card {
+        padding: 40px 12px 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: none !important;
+        border-radius: 16px;
+    }
+
+    .surgicals-theme .lp-card::before {
+        opacity: 1;
+        transform: scaleX(1);
+        height: 2px;
+    }
+
+    .surgicals-theme .lp-card-arrow {
+        color: var(--accent);
+    }
+
+    /* Staggered entrance animation for cards */
+    .surgicals-theme .lp-card:nth-child(1) {
+        animation: lp-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+    }
+
+    .surgicals-theme .lp-card:nth-child(2) {
+        animation: lp-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+    }
+
+
+    .surgicals-theme .lp-card-logo-wrap {
+        width: 100%;
+        height: 80px;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 14px;
+        box-sizing: border-box;
+    }
+
+    .surgicals-theme .lp-logo-enterprise .lp-card-logo {
+        transform: none;
+        /* Removed scale to prevent border overflow on mobile */
+    }
+
+    .surgicals-theme .lp-card-title {
+        font-size: 15px;
+        min-height: 2.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .surgicals-theme .lp-card-subtitle {
+        font-size: 11px;
+        max-width: 100%;
+        margin: 0 auto;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 2.8em;
+    }
+
+    .surgicals-theme .lp-card-tag {
+        display: block;
+        top: 10px;
+        right: 10px;
+        font-size: 8px;
+        padding: 2px 6px;
+    }
+
+    .surgicals-theme .lp-card-arrow {
+        margin-top: 4px;
+        background: color-mix(in srgb, var(--accent) 8%, transparent);
+        padding: 6px 16px;
+        border-radius: 50px;
+        color: var(--accent);
+        animation: lp-arrow-nudge 2s ease-in-out infinite;
+    }
+
+    .surgicals-theme .lp-card-arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ── Product Search Bar ── */
+.surgicals-theme .ps-search-outer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.surgicals-theme .pp-sidebar-search {
+    padding: 0 0 24px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .surgicals-theme .pp-sidebar-search {
+        grid-column: 1 / -1;
+        padding: 0 0 16px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.surgicals-theme .ps-search-bar {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.04),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    padding: 10px 14px;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    width: 100%;
+    /* Will be constrained by its parent's flex-centering or padding */
+    max-width: 210px;
+    /* Safe fixed width for desktop sidebar */
+}
+
+.surgicals-theme .ps-search-bar:hover {
+    border-color: #cbd5e1;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .ps-search-bar:focus-within {
+    border-color: #3b82f6;
+    box-shadow: none !important;
+}
+
+.surgicals-theme .ps-search-input {
+    flex: 1;
+    min-width: 0;
+    /* CRITICAL: allow input to shrink to fit container */
+    border: none !important;
+    outline: none !important;
+    background: transparent;
+    font-size: 13px;
+    color: #1f2937;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 2px 0;
+    box-shadow: none !important;
+    /* Remove any internal shadow */
+}
+
+.surgicals-theme .ps-search-input::placeholder {
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.surgicals-theme .ps-search-input:focus::placeholder {
+    transform: translateX(12px);
+    opacity: 0.5;
+}
+
+.surgicals-theme .ps-search-clear {
+    background: #f3f4f6;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    animation: ps-clear-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes ps-clear-in {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-45deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.surgicals-theme .ps-search-clear:hover {
+    background: #fee2e2;
+    color: #dc2626;
+    transform: scale(1.1);
+}
+
+.surgicals-theme .ps-search-icon-wrap {
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.surgicals-theme .ps-search-bar:focus-within .ps-search-icon-wrap {
+    color: #3b82f6;
+    transform: scale(1.1) rotate(10deg);
+}
+
+.surgicals-theme .ps-search-icon-wrap svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* --- Animations & Utilities --- */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.surgicals-theme .animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+.surgicals-theme .group:hover .group-hover\:animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+.surgicals-theme .w-4 {
+    width: 1rem;
+}
+
+.surgicals-theme .h-4 {
+    height: 1rem;
+}
+
+.surgicals-theme .inline-flex {
+    display: inline-flex;
+}
+
+.surgicals-theme .items-center {
+    align-items: center;
+}
+
+.surgicals-theme .justify-center {
+    justify-content: center;
+}
+
+.surgicals-theme .gap-1 {
+    gap: 0.25rem;
+}
+
+/* 📱 MOBILE RESPONSIVE (max-width: 768px) */
+@media (max-width: 768px) {
+    .surgicals-theme nav {
+        padding: 0 16px;
+        height: 60px;
+    }
+
+    .surgicals-theme .logo-img {
+        height: 48px;
+    }
+
+    .surgicals-theme .hamburger {
+        display: flex;
+    }
+
+    .surgicals-theme .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: none !important;
+        z-index: 1000;
+    }
+
+    .surgicals-theme .nav-links.open {
+        display: flex;
+    }
+
+    .surgicals-theme .nav-right {
+        gap: 8px;
+    }
+
+    .surgicals-theme .nav-contact-btn {
+        display: none;
+    }
+
+    .surgicals-theme .nav-cta {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    /* Refined About Visibility */
+    .surgicals-theme .mobile-about-title {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .surgicals-theme .desktop-about-title {
+        display: none !important;
+    }
+
+
+}
+
+
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes lp-card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lp-arrow-nudge {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+/* ── AUTHORIZED DEALERS ── */
+.surgicals-theme .dealers-section {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, var(--navy) 0%, #0a111f 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+/* Subtle Medical Grid Pattern */
+.surgicals-theme .dealers-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+/* Added a soft ambient glow */
+.surgicals-theme .dealers-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(26, 95, 168, 0.03) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.surgicals-theme .dealers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.surgicals-theme .dealer-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px 20px;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Glass Reflection Effect */
+.surgicals-theme .dealer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.03),
+            transparent);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.surgicals-theme .dealer-card:hover::before {
+    left: 100%;
+}
+
+.surgicals-theme .dealer-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 45px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.surgicals-theme .dealer-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+    color: #000;
+    font-size: 8px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+    animation: badgePulse 3s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+}
+
+.surgicals-theme .dealer-monogram-wrap {
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+}
+
+.surgicals-theme .dealer-card:hover .dealer-monogram-wrap {
+    border-color: #D4AF37;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+}
+
+.surgicals-theme .dealer-monogram {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFF 0%, #D4AF37 50%, #B8860B 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: -1px;
+}
+
+.surgicals-theme .dealer-card:hover .dealer-monogram {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
+}
+
+.surgicals-theme .dealer-info h3 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.2px;
+}
+
+.surgicals-theme .dealer-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.surgicals-theme .location-icon {
+    width: 14px;
+    height: 14px;
+    color: #D4AF37;
+    opacity: 0.8;
+}
+
+/* Mobile 3x3 scaling */
+@media (max-width: 768px) {
+    .surgicals-theme .dealers-section {
+        padding: 40px 5%;
+    }
+
+    .surgicals-theme .dealers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .surgicals-theme .dealer-card {
+        padding: 22px 5px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid transparent;
+        animation: mobileBorderPulse 9s infinite linear;
+    }
+
+    /* Randomized sequential delays for a 'twinkling' effect */
+    .surgicals-theme .dealer-card:nth-child(1) { animation-delay: 0s; }
+    .surgicals-theme .dealer-card:nth-child(5) { animation-delay: 1s; }
+    .surgicals-theme .dealer-card:nth-child(9) { animation-delay: 2s; }
+    .surgicals-theme .dealer-card:nth-child(2) { animation-delay: 3s; }
+    .surgicals-theme .dealer-card:nth-child(7) { animation-delay: 4s; }
+    .surgicals-theme .dealer-card:nth-child(3) { animation-delay: 5s; }
+    .surgicals-theme .dealer-card:nth-child(8) { animation-delay: 6s; }
+    .surgicals-theme .dealer-card:nth-child(4) { animation-delay: 7s; }
+    .surgicals-theme .dealer-card:nth-child(6) { animation-delay: 8s; }
+
+    @keyframes mobileBorderPulse {
+        0%, 25%, 100% { 
+            border-color: transparent;
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        12.5% {
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.08);
+        }
+    }
+
+    .surgicals-theme .dealer-badge {
+        top: 5px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        font-size: 5px;
+        padding: 2px 5px;
+        white-space: nowrap;
+        width: max-content;
+    }
+
+    .surgicals-theme .dealer-monogram-wrap {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 10px;
+        border-color: rgba(212, 175, 55, 0.15);
+    }
+
+    .surgicals-theme .dealer-monogram {
+        font-size: 16px;
+    }
+
+    .surgicals-theme .dealer-info h3 {
+        font-size: 9px;
+        margin-bottom: 4px;
+        line-height: 1.1;
+    }
+
+    .surgicals-theme .dealer-location {
+        font-size: 8px;
+        gap: 3px;
+    }
+
+    .surgicals-theme .location-icon {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* s-sub keeps white-space: nowrap from base rule — single line on desktop */
+.surgicals-theme .s-sub {
+    white-space: normal !important;
+}
+
+
+.surgicals-theme {
+    /* ── DESIGN TOKENS ── */
+    --navy: #081221;
+    --navy-light: #0D1B2A;
+    --blue: #1A5FA8;
+    --blue-mid: #0C447C;
+    --blue-light: #F1F5F9;
+    --teal: #0D9488;
+    --cyan: #06B6D4;
+    --amber: #C97A15;
+    --amber-soft: #FAEEDA;
+    --text: #0F172A;
+    --text-mid: #475569;
+    --text-light: #64748B;
+    --border: #E2E8F0;
+    --bg-alt: #F8FAFC;
+    --white: #FFFFFF;
+
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 24px;
+    --header-h: 72px;
+
+    /* ── NAV ── */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        background: var(--white);
+        padding: 0 5%;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(16px);
+        box-shadow: none !important;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        text-decoration: none;
+    }
+
+    .logo-img {
+        height: 75px;
+        width: auto;
+        display: block;
+    }
+
+    .logo-words .l1 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--blue);
+        line-height: 1.1;
+        letter-spacing: -0.3px;
+    }
+
+    @media (min-width: 360px) {
+        .logo-words .l1 {
+            font-size: 17px;
+        }
+    }
+
+    .logo-words .l2 {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--amber);
+        line-height: 1.1;
+    }
+
+    @media (min-width: 360px) {
+        .logo-words .l2 {
+            font-size: 13px;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+        font-weight: 500;
+        color: #0A1628;
+        text-decoration: none;
+        transition: color 0.2s;
+        position: relative;
+    }
+
+    @media (hover: hover) {
+        .nav-links a:hover {
+            color: #1A5FA8;
+        }
+    }
+
+    .nav-links a.active {
+        color: var(--blue);
+    }
+
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background: #C97A15;
+        transform: scaleX(1);
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background: #C97A15;
+        transform: scaleX(0);
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (hover: hover) {
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nav-phone {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--blue);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .nav-phone svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .nav-cta {
+        background: #C97A15;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 9px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+        background: #A86010;
+    }
+
+    .nav-contact-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--blue);
+        text-decoration: none;
+        padding: 9px 18px;
+        border-radius: 8px;
+        border: 1.5px solid var(--blue);
+        transition: all 0.3s ease;
+    }
+
+    .nav-contact-btn:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: none !important;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 45px 5% 120px;
+        padding-bottom: 90px;
+        background: linear-gradient(135deg, #071A3E 0%, #0C3470 40%, #1A5FA8 100%);
+        overflow: clip !important;
+        --spot-radius: 190px;
+    }
+
+    #hero::before,
+    #hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(#c97a15 1.2px, transparent 1.2px);
+        background-size: 28px 28px;
+        pointer-events: none;
+    }
+
+    #hero::before {
+        opacity: 0.45;
+        animation: dotMotion 8s ease-in-out infinite, breathingOpacity 8s ease-in-out infinite;
+        mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0%, black 100%);
+        -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0%, black 100%);
+    }
+
+    #hero::after {
+        opacity: 0;
+        background-image: radial-gradient(#c97a15 1.8px, transparent 1.8px);
+        filter: none !important;
+        mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+        transition: none;
+        transform: none;
+        animation: dotMotion 8s ease-in-out infinite;
+    }
+
+    #hero:hover::after {
+        opacity: 1;
+    }
+
+    #hero:not(:hover)::before {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+}
+
+.surgicals-theme {
+
+    .hero-wave {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        line-height: 0;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .hero-wave svg {
+        display: block;
+        width: 100%;
+        height: 62px;
+        fill: #ffffff;
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 40px;
+        min-width: 0;
+    }
+
+    .hero-col-left {
+        flex: 1 1 60%;
+        max-width: 60%;
+        min-width: 0;
+    }
+
+    .hero-col-right {
+        flex: 1 1 35%;
+        max-width: 35%;
+        min-width: 0;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(201, 122, 21, 0.1);
+        border: 1px solid rgba(201, 122, 21, 0.4);
+        color: #C97A15;
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        margin-bottom: 24px;
+        opacity: 0;
+        animation: fadeInDown 0.6s ease 0.1s forwards;
+    }
+
+    .hero-title-line {
+        display: block;
+        opacity: 0;
+        transform: translateY(24px);
+        text-shadow: none !important;
+    }
+
+    .hero-title-line:nth-child(1) {
+        animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+
+    .hero-title-line:nth-child(2) {
+        animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+    }
+
+    .hero-title-line:nth-child(3) {
+        animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+    }
+
+    #hero h1 {
+        font-family: 'Instrument Serif', serif;
+        font-size: clamp(42px, 6vw, 72px);
+        color: white;
+        line-height: 1.15;
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+
+    .hero-sub {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.75;
+        max-width: 520px;
+        margin-bottom: 32px;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        opacity: 0;
+        animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+    }
+
+    .hero-value-props {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+    }
+
+    .hero-vp-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: -20px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+        font-family: 'DM Sans', sans-serif;
+    }
+
+    .hero-vp-item svg {
+        width: 14px;
+        height: 14px;
+        color: #25D366;
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.3s forwards;
+    }
+
+    .btn-primary {
+        background: #C97A15;
+        color: white;
+        padding: 14px 32px;
+        border-radius: 10px;
+        border: none;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        margin-top: 15px;
+        overflow: hidden;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: white;
+        padding: 14px 32px;
+        border-radius: 10px;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 15px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: background 0.3s, border-color 0.3s;
+    }
+
+    /* ── HERO SLIDESHOW ── */
+    .hero-slideshow {
+        position: relative;
+        width: 100%;
+        height: 480px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: #071A3E;
+        animation: fadeInRight 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+    }
+
+    .hs-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .hs-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+        will-change: transform, opacity;
+    }
+
+    .hs-slide.active {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 2;
+        transform: translateX(0) scale(1);
+    }
+
+    .hs-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.1);
+        will-change: transform;
+    }
+
+    .hs-slide.active .hs-bg {
+        animation: kenBurns 10s ease-out forwards;
+    }
+
+
+    .hs-content {
+        position: absolute;
+        bottom: 40px;
+        left: 24px;
+        right: 24px;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hs-tag {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        background: rgba(8, 18, 33, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        backdrop-filter: blur(10px);
+    }
+
+    .hs-text-box {
+        background: rgba(8, 18, 33, 0.85);
+        padding: 12px 18px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+
+    .hs-name {
+        font-family: 'Instrument Serif', serif;
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .hs-desc {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.5;
+        font-family: 'DM Sans', sans-serif;
+    }
+
+    .hs-enquire {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #C97A15;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: linear-gradient(135deg, rgba(8, 18, 33, 1) 0%, rgba(12, 68, 124, 1) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        padding: 50px 5%;
+        position: relative;
+        z-index: 50;
+        width: 92%;
+        max-width: 1300px;
+        margin: 80px auto 40px;
+    }
+
+    .stat-item {
+        text-align: center;
+        position: relative;
+        transition: transform 0.4s;
+    }
+
+    .stat-num {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    .stat-num span {
+        color: var(--amber);
+        font-size: 32px;
+        margin-left: 2px;
+    }
+
+    .stat-lbl {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+
+    /* ── STRIP ── */
+    .strip {
+        margin-top: 68px;
+        background-color: #C97A15;
+        border-top: 1px solid var(--border);
+        padding: 12px 0;
+        overflow: hidden;
+    }
+
+    .strip-track {
+        display: flex;
+        white-space: nowrap;
+        width: max-content;
+        animation: marquee 40s linear infinite;
+        gap: 64px;
+    }
+
+    .strip-item {
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+
+    /* ── SECTIONS ── */
+    .section {
+        padding: 60px 5% 0px;
+    }
+
+    .s-tag {
+        display: inline-block;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--blue);
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .s-title {
+        font-family: 'Instrument Serif', serif;
+        font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+        color: var(--text);
+        line-height: 1.25;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .s-title em {
+        font-style: italic;
+        color: var(--blue);
+    }
+
+    .s-sub {
+        font-size: 14px;
+        color: var(--text-soft);
+        line-height: 1.75;
+        max-width: 600px;
+        text-align: justify;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 80px;
+        align-items: flex-start;
+    }
+
+    .about-visual {
+        position: relative;
+    }
+
+    .about-img {
+        position: relative;
+        top: -50px;
+        z-index: 2;
+        border-radius: var(--radius-lg);
+    }
+
+    .about-chip {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        background: var(--navy);
+        padding: 22px 30px;
+        border-radius: 16px;
+        z-index: 10;
+        box-shadow: none !important;
+        text-align: center;
+    }
+
+    .about-chip strong {
+        color: var(--amber);
+        font-size: 32px;
+        font-weight: 700;
+        display: block;
+    }
+
+    .about-chip span {
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .about-facts {
+        list-style: none;
+        margin-top: 40px;
+        display: grid;
+        gap: 24px;
+    }
+
+    .about-fact {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        background: var(--white);
+        border-radius: var(--radius);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.4s;
+    }
+
+    .fact-icon {
+        width: 44px;
+        height: 44px;
+        background: #F1F5F9;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-mid);
+    }
+
+    .fact-text strong {
+        display: block;
+        font-size: 12px;
+        color: var(--text-soft);
+        margin-bottom: 2px;
+    }
+
+    .fact-text p {
+        font-size: 13.5px;
+        color: var(--text);
+    }
+
+    /* ── PRODUCTS (Categories) ── */
+    .pcat-wrap {
+        display: grid;
+        grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+        gap: 40px;
+        align-items: start;
+    }
+
+    .pcat-card:nth-child(1) .pcat-img img,
+    .pcat-card:nth-child(2) .pcat-img img {
+        object-position: 48% center;
+    }
+
+    .pcat-card:nth-child(3) .pcat-img img {
+        object-position: 35% center;
+    }
+
+    .pcat-grid {
+        display: grid;
+        gap: 16px;
+    }
+
+    .pcat-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 22px;
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+
+    .pcat-card.active {
+        border-color: var(--blue);
+        box-shadow: none !important;
+        transform: translateX(12px);
+    }
+
+    .pcat-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .pcat-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pcat-info h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--navy);
+    }
+
+    .pcat-info p {
+        font-size: 13px;
+        color: var(--text-mid);
+    }
+
+    .pcat-panel {
+        position: sticky;
+        top: 100px;
+    }
+
+    .pcat-detail {
+        display: none;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: none !important;
+    }
+
+    .pcat-detail.active {
+        display: block;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    .pcd-header {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .pcd-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pcd-header-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(4, 44, 83, 0.85), transparent);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .pcd-header h2 {
+        color: #fff;
+        font-size: 28px;
+    }
+
+    .pcd-body {
+        padding-top: 20px;
+    }
+
+    .prod-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    .pg-card {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        box-shadow: none !important;
+    }
+
+    .pg-card:hover {
+        border-color: var(--blue);
+        background: #fff;
+        transform: translateY(-4px);
+        box-shadow: none !important;
+    }
+
+    .pg-img {
+        width: 100%;
+        aspect-ratio: 1;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .pg-img img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .pg-info strong {
+        display: block;
+        font-size: 14px;
+        color: var(--navy);
+    }
+
+    .pg-info span {
+        font-size: 12px;
+        color: var(--text-light);
+    }
+
+    .pcd-enquire {
+        background: #25D366;
+        color: #fff;
+        text-decoration: none;
+        padding: 16px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-weight: 600;
+    }
+
+    /* ── WHY CHOOSE US ── */
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .why-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        transition: all 0.5s;
+    }
+
+    .why-icon {
+        width: 64px;
+        height: 64px;
+        background: rgba(6, 182, 212, 0.15);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 28px;
+        color: var(--cyan);
+    }
+
+    .why-icon svg {
+        width: 32px;
+        height: 32px;
+        fill: none;
+        stroke: currentColor;
+    }
+
+    .why-card h3 {
+        color: #fff;
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .why-card p {
+        font-size: 14.5px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ── BRANDS ── */
+    .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .brand-tile {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        text-align: center;
+        transition: all 0.3s;
+    }
+
+    .brand-tile:hover {
+        transform: translateY(-5px);
+        box-shadow: none !important;
+        border-color: var(--blue);
+    }
+
+    .brand-logo-wrapper {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .brand-logo-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .brand-logo-wrapper img[src*="puniska"] {
+        transform: scale(3.1);
+    }
+
+    .brand-logo-wrapper img[src*="sevana"] {
+        transform: scale(0.9);
+    }
+
+    .brand-logo-wrapper img[src*="romsons"] {
+        transform: scale(2);
+    }
+
+    .brand-logo-wrapper img[src*="HMD"] {
+        transform: scale(2);
+    }
+
+    .status {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--amber);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* ── SERVICES ── */
+    .svc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .svc-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        background: var(--white);
+        display: flex;
+        gap: 32px;
+        transition: all 0.4s;
+    }
+
+    .svc-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        background: var(--blue-light);
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .svc-icon svg {
+        width: 36px;
+        height: 36px;
+        fill: none;
+        stroke: currentColor;
+    }
+
+    .svc-content h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: var(--navy);
+    }
+
+    .svc-content p {
+        font-size: 15px;
+        color: var(--text-mid);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .testi-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        transition: all 0.4s;
+    }
+
+    .testi-stars {
+        color: var(--amber);
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .testi-card blockquote {
+        font-size: 16px;
+        color: var(--text-mid);
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+
+    .testi-author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .tav {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--blue);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .tavi strong {
+        font-size: 15px;
+        color: var(--navy);
+        display: block;
+    }
+
+    .tavi small {
+        font-size: 13px;
+        color: var(--text-light);
+    }
+
+    /* ── CONTACT ── */
+    .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 64px;
+        background: var(--navy);
+        border-radius: var(--radius-lg);
+        padding: 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-left h2 {
+        font-size: 37px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .contact-left p {
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 48px;
+    }
+
+    .contact-facts {
+        display: grid;
+        gap: 32px;
+    }
+
+    .cf {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .cf-icon {
+        width: 56px;
+        height: 56px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cyan);
+    }
+
+    .cf-val {
+        font-size: 16px;
+        color: #fff;
+    }
+
+    .contact-form-wrap {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 48px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .fg {
+        margin-bottom: 20px;
+    }
+
+    .fg label {
+        display: block;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 8px;
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+        width: 100%;
+        padding: 14px 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .form-btns {
+        display: flex;
+        gap: 16px;
+    }
+
+    .btn-wa {
+        background: #25D366;
+        color: #fff;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+        background: var(--navy);
+        padding: 100px 5% 0;
+        color: #fff;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 64px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .fg-about p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+        margin-top: 24px;
+    }
+
+    .fg-col h4 {
+        font-size: 13px;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        letter-spacing: 2px;
+    }
+
+    .fg-col ul {
+        list-style: none;
+        display: grid;
+        gap: 14px;
+    }
+
+    .fg-col ul a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .foot-ci {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .foot-ci svg {
+        width: 20px;
+        height: 20px;
+        color: var(--amber);
+        stroke: currentColor;
+        fill: none;
+    }
+
+    .foot-ci p,
+    .foot-ci a {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .footer-bottom {
+        padding: 18px 0 24px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ── SEARCH BAR ── */
+    .ps-search-bar {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 10px 14px;
+        gap: 8px;
+        width: 100%;
+        max-width: 210px;
+    }
+
+    .ps-search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 13px;
+        background: transparent;
+    }
+
+    .ps-search-input::placeholder {
+        color: #94a3b8;
+        font-weight: 700;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    /* ── PRODUCTS PAGE (DESKTOP) ── */
+    .pp-hero {
+        position: relative;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        padding: 0 5%;
+        background: var(--navy);
+        overflow: hidden;
+        margin-top: var(--header-h);
+    }
+
+    .pp-hero-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        transition: background-image 0.5s ease;
+    }
+
+    .pp-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: transparent;
+    }
+
+    .pp-hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 600px;
+    }
+
+    .pp-hero-tag {
+        display: inline-block;
+        padding: 6px 12px;
+        background: rgba(26, 95, 168, 0.2);
+        border: 1px solid rgba(26, 95, 168, 0.4);
+        color: #fff;
+        border-radius: 50px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .pp-hero-title {
+        font-size: 48px;
+        color: #fff;
+        margin-bottom: 16px;
+        font-family: 'Instrument Serif', serif;
+        text-shadow: none !important;
+    }
+
+    .pp-hero-title em {
+        font-style: italic;
+        color: var(--amber);
+        text-shadow: none !important;
+    }
+
+    .pp-hero-sub {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        text-shadow: none !important;
+    }
+
+    .pp-back-btn {
+        position: absolute;
+        top: 22px;
+        left: 123px;
+        z-index: 20;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+    }
+
+    .pp-back-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(-4px);
+    }
+
+    .pp-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 48px;
+        padding: 80px 5%;
+        background: #fff;
+        min-height: 100vh;
+    }
+
+    .pp-sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        background: #f8fafc;
+        padding: 32px;
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .pp-sidebar-label {
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #64748b;
+        letter-spacing: 1.5px;
+        margin-bottom: 24px;
+        padding-left: 8px;
+    }
+
+    .pp-cat-tab {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        color: var(--text-mid);
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    .pp-cat-tab-dot {
+        width: 8px;
+        height: 8px;
+        background: #cbd5e1;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+    .pp-cat-tab:hover {
+        background: #fff;
+        color: var(--blue);
+    }
+
+    .pp-cat-tab.active {
+        background: #fff;
+        color: var(--blue);
+        border-color: #e2e8f0;
+        box-shadow: none !important;
+    }
+
+    .pp-cat-tab.active .pp-cat-tab-dot {
+        background: var(--blue);
+        transform: scale(1.5);
+    }
+
+    .pp-main {
+        position: relative;
+    }
+
+    .pp-panel-head {
+        border-radius: 24px;
+        overflow: hidden;
+        margin-bottom: 40px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .pp-panel-head-img {
+        position: relative;
+        height: 200px;
+    }
+
+    .pp-panel-head-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pp-panel-head-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(15, 23, 42, 0.9), transparent);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .pp-panel-head-overlay h2 {
+        color: #fff;
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .pp-panel-head-overlay p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        max-width: 500px;
+        line-height: 1.6;
+    }
+
+    .pp-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .pp-cat-wa-wrap {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px solid #e5e7eb;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ── MOBILE RESPONSIVE (max-width: 768px) ── */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 24px 5%;
+            gap: 20px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: none !important;
+            z-index: 1000;
+        }
+
+        .nav-links.open {
+            display: flex;
+        }
+
+        .nav-links li {
+            width: 100%;
+        }
+
+        .nav-links li a {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            line-height: 1.4;
+            text-decoration: none;
+        }
+
+        .nav-links li a::after,
+        .nav-links li a.active::after {
+            display: none;
+            content: none;
+        }
+
+        .nav-links li a.active {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            text-decoration-color: currentColor;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .nav-phone {
+            display: none;
+        }
+
+        .logo-img {
+            height: 60px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            max-height: 100%;
+        }
+
+        .nav-cta,
+        .nav-contact-btn {
+            height: 32px !important;
+            padding: 0 10px !important;
+            font-size: 11px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .section {
+            padding: 40px 24px;
+        }
+
+        .s-sub {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .strip {
+            margin-top: 64px !important;
+        }
+
+        #hero {
+            padding: 20px 24px 60px !important;
+            overflow: visible !important;
+            text-align: center;
+        }
+
+        .hero-inner {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 32px;
+            width: 100%;
+        }
+
+        .hero-col-left,
+        .hero-col-right {
+            max-width: 100%;
+            flex: 1 1 100%;
+            width: 100%;
+        }
+
+        #hero h1 {
+            font-size: 34px !important;
+            text-align: center !important;
+            margin-bottom: 8px !important;
+            line-height: 1.1 !important;
+            margin-top: 0 !important;
+        }
+
+        .hero-badge {
+            margin-bottom: 8px !important;
+            font-size: 11px !important;
+            padding: 6px 14px !important;
+            display: inline-block !important;
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            margin: 0 auto 24px;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.6;
+            max-width: 100%;
+        }
+
+        .hero-value-props {
+            justify-content: center;
+            gap: 26px;
+            margin-bottom: 32px;
+        }
+
+        .hero-btns {
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto 0;
+            gap: 8px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .btn-secondary {
+            background: rgba(8, 18, 33, 0.4) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+            backdrop-filter: blur(4px);
+        }
+
+        .stats-bar {
+            grid-template-columns: repeat(4, 1fr);
+            margin: 20px auto 16px;
+            padding: 16px 3%;
+        }
+
+        .stat-num {
+            font-size: 24px;
+        }
+
+        .stat-lbl {
+            font-size: 8px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .about-facts {
+            padding-bottom: 0 !important;
+            margin-top: 20px !important;
+        }
+
+        #about.section {
+            padding-bottom: 20px !important;
+            padding-top: 20px !important;
+        }
+
+        #products.section {
+            padding-top: 20px !important;
+            padding-bottom: 40px !important;
+        }
+
+        .about-img {
+            top: 0;
+            margin-bottom: 0px;
+        }
+
+        .about-chip {
+            bottom: 10px;
+            right: 0;
+            padding: 12px 18px;
+        }
+
+        .about-chip strong {
+            font-size: 24px;
+        }
+
+        /* Home Page Products Section Fix */
+        .pcat-wrap {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .pcat-panel {
+            position: static;
+            top: 0;
+        }
+
+        .pcat-detail {
+            margin-top: 10px;
+        }
+
+        .pcat-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 0 16px;
+        }
+
+        .pcat-card {
+            flex-direction: column;
+            padding: 16px 12px;
+            text-align: center;
+        }
+
+        .pcat-img {
+            width: 68px;
+            height: 68px;
+            margin: 0 auto 10px;
+        }
+
+        .pcat-info h3 {
+            font-size: 13px;
+            line-height: 1.2;
+        }
+
+        .pcat-info p {
+            display: none;
+        }
+
+        /* Products Page Layout Fix */
+        .pp-layout {
+            grid-template-columns: 1fr;
+            padding: 0 16px 40px;
+        }
+
+        .pp-sidebar {
+            position: static;
+            border-right: none;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            max-height: none;
+        }
+
+        .pp-sidebar-label {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .pp-cat-tab {
+            flex-direction: column;
+            text-align: center;
+            padding: 12px 8px;
+            font-size: 12px;
+            gap: 6px;
+        }
+
+        .pp-main {
+            padding: 24px 0;
+        }
+
+        .pp-sidebar-search {
+            grid-column: 1 / -1;
+            padding: 0 0 16px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ps-search-bar {
+            max-width: 100%;
+        }
+
+        /* Products Grid */
+        .prod-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0 16px;
+        }
+
+        .pg-card {
+            padding: 12px 8px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .pg-img {
+            padding: 6px;
+            margin-bottom: 4px;
+        }
+
+        .pg-info strong {
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 0;
+            line-height: 1.1;
+            color: var(--navy);
+        }
+
+        .pg-info span {
+            display: none;
+        }
+
+        .why-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .why-card {
+            padding: 16px 12px;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .why-card p {
+            display: none;
+        }
+
+        .why-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 0;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .why-card h3 {
+            font-size: 11px;
+            line-height: 1.3;
+            margin: 0;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .svc-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .svc-card {
+            padding: 16px 12px;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            border-radius: 24px;
+            background: #fff;
+            border: 1px solid #f1f5f9;
+        }
+
+        .svc-card p {
+            display: none;
+        }
+
+        .svc-icon {
+            width: 48px;
+            height: 48px;
+            background: #f1f5f9;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--blue);
+        }
+
+        .svc-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .svc-content h3 {
+            font-size: 13.5px;
+            line-height: 1.2;
+            margin: 0;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .brands-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .brand-tile {
+            padding: 20px 12px;
+        }
+
+        .brand-tile:last-child {
+            grid-column: span 2;
+            width: calc(50% - 6px);
+            margin: 0 auto;
+        }
+
+        .brand-logo-wrapper {
+            height: 44px;
+        }
+
+        .brand-tile .status {
+            font-size: 8px;
+        }
+
+        .lic-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .lic-card {
+            padding: 20px 12px;
+            text-align: center;
+        }
+
+        .lic-info h3 {
+            font-size: 11px;
+            margin-top: 10px;
+            line-height: 1.3;
+        }
+
+        .lic-info p {
+            font-size: 10px;
+        }
+
+        .testi-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .testi-card {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .tav {
+            display: none;
+        }
+
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            padding-bottom: 32px;
+        }
+
+        footer {
+            padding: 30px 24px 20px !important;
+        }
+
+        .footer-grid>div:first-child {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .fg-about p {
+            text-align: center;
+            margin: 20px auto 32px;
+            max-width: 100%;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+        }
+
+        .fg-col h4 {
+            margin-bottom: 16px;
+            font-size: 11px;
+        }
+
+        .fg-col ul {
+            gap: 10px;
+        }
+
+        .fg-col ul a {
+            font-size: 12px;
+        }
+
+        .contact-wrap {
+            padding: 40px 16px;
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form-wrap {
+            padding: 24px 16px;
+        }
+
+        .form-btns {
+            flex-direction: column;
+        }
+    }
+
+    /* ������ REVEAL & ANIMATIONS ������ */
+}
+
+/* -- ANIMATIONS -- */
+@keyframes dotMotion {
+
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 0 10px;
+    }
+}
+
+@keyframes breathingOpacity {
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 0.75;
+    }
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* FINAL MOBILE OVERRIDES — FORCE SYNC WITH THIYASH */
+@media (max-width: 768px) {
+    .surgicals-theme .prod-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+        padding: 0 16px !important;
+        display: grid !important;
+    }
+
+    .surgicals-theme .pg-card {
+        padding: 12px 8px !important;
+        border-radius: 16px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+
+    .surgicals-theme .pg-img {
+        padding: 6px !important;
+        margin-bottom: 4px !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .surgicals-theme .pg-info strong {
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        margin-bottom: 0 !important;
+        line-height: 1.1 !important;
+        color: #0F172A !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    .surgicals-theme .pg-info span {
+        display: none !important;
+    }
+
+    .surgicals-theme .pp-layout {
+        grid-template-columns: 1fr !important;
+        padding: 0 16px 40px !important;
+    }
+
+    .surgicals-theme .pp-panel-head {
+        height: 180px !important; /* Decreased height */
+        margin-bottom: 20px !important;
+    }
+
+    .surgicals-theme .pp-panel-head-overlay {
+        background: linear-gradient(to right, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.1)) !important;
+        padding: 16px !important; /* Reduced padding to fit text in smaller height */
+    }
+
+    .surgicals-theme .pp-panel-head-overlay h2 {
+        font-size: 24px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .surgicals-theme .pp-panel-head-overlay p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        max-width: 100% !important;
+    }
+
+    .surgicals-theme .pp-sidebar {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        padding: 16px 12px !important;
+        max-height: none !important;
+    }
+
+    .surgicals-theme .pp-sidebar-label {
+        margin-bottom: 6px !important;
+    }
+
+    .surgicals-theme .pp-sidebar-search {
+        padding: 0 0 8px 0 !important;
+    }
+
+    .surgicals-theme .pp-cat-tab {
+        padding: 8px 6px !important;
+        font-size: 12px !important;
+        gap: 4px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .surgicals-theme .pcat-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 0 16px !important;
+    }
+
+    .surgicals-theme .hero-slideshow {
+        width: 362px !important;
+        height: 318px !important;
+        margin: 0 auto !important;
+        border-radius: 16px !important;
+    }
+}
+
+/* Disable zoom-in/zoom-out Ken Burns animation and scale transition on Surgicals hero slideshow */
+.surgicals-theme .hs-slide.active .hs-bg,
+.surgicals-theme .hs-bg {
+    animation: none !important;
+    transform: scale(1) !important;
+    transition: none !important;
+}
