@@ -20,7 +20,7 @@ const About = () => {
               alt="Proprietor"
               style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }} loading="lazy" />
             <div className="about-chip">
-              <strong>2016</strong>
+              <strong>2021</strong>
               <span>Est. Since</span>
             </div>
           </div>

@@ -46,17 +46,16 @@ export default function LandingPage() {
       {/* Subtle background pattern */}
       <div className="lp-bg-pattern" aria-hidden="true" />
 
-      <main className="lp-main">
-        {/* Group Logo */}
-        <div className="lp-group-logo-wrap" aria-label="Perundurai Groups">
-          <img
-            src={groupLogo}
-            alt="Perundurai Groups"
-            className="lp-group-logo"
-            draggable="false"
-          />
-        </div>
+      {/* Watermark Logo Background */}
+      <div className="lp-watermark-bg" aria-hidden="true">
+        <img
+          src={groupLogo}
+          alt=""
+          draggable="false"
+        />
+      </div>
 
+      <main className="lp-main">
         {/* Header */}
         <header className="lp-header">
           <span className="lp-eyebrow">Welcome</span>
