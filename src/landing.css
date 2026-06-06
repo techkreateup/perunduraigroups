@@ -236,8 +236,12 @@
     padding: 0;
 }
 
+.lp-logo-enterprise {
+    padding: 0;
+}
+
 .lp-logo-enterprise .lp-card-logo {
-    transform: scale(1.15);
+    transform: scale(1.6);
 }
 
 .lp-card-logo {
@@ -246,8 +250,7 @@
     object-fit: contain;
     display: block;
     user-select: none;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
 }
 
 /* ── Card text ── */
@@ -434,8 +437,12 @@
         box-sizing: border-box;
     }
 
+    .lp-logo-enterprise {
+        padding: 2px;
+    }
+
     .lp-logo-enterprise .lp-card-logo {
-        transform: none;
+        transform: scale(1.30);
     }
 
     .lp-card-title {
