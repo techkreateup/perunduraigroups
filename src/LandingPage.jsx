@@ -55,16 +55,17 @@ export default function LandingPage() {
         />
       </div>
 
+      {/* Group Logo */}
+      <div className="lp-group-logo-wrap" aria-label="Perundurai Groups">
+        <img
+          src={groupLogo}
+          alt="Perundurai Groups"
+          className="lp-group-logo"
+          draggable="false"
+        />
+      </div>
+
       <main className="lp-main">
-        {/* Group Logo */}
-        <div className="lp-group-logo-wrap" aria-label="Perundurai Groups">
-          <img
-            src={groupLogo}
-            alt="Perundurai Groups"
-            className="lp-group-logo"
-            draggable="false"
-          />
-        </div>
 
         {/* Header */}
         <header className="lp-header">

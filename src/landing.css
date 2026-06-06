@@ -62,13 +62,17 @@
 
 /* ── Group Logo ── */
 .lp-group-logo-wrap {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: lp-fade-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
     flex-shrink: 0;
     /* ⭐ DESKTOP SIZE — change this width to make the logo bigger/smaller */
-    width: 200px;
+    width: 160px;
     /* ⭐ DESKTOP POSITION — change this to nudge the logo up/down on desktop */
     margin-top: 0px;
 }
@@ -354,17 +358,20 @@
     }
 
     .lp-main {
-        padding: 4px 14px 8px;
+        padding: 72px 14px 8px;
         gap: 8px;
     }
 
     /* ── Mobile group logo ── */
     /* ⭐ MOBILE SIZE — change this width to make the logo bigger/smaller on mobile */
     .lp-group-logo-wrap {
-        width: 130px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: 90px;
         /* ⭐ MOBILE POSITION — change this to nudge the logo up/down on mobile (e.g., -20px) */
-        margin-top: -50px;
-        margin-bottom: 30px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
     .lp-group-logo {
         border-radius: 8px;
@@ -373,7 +380,7 @@
 
     .lp-header {
         gap: 4px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .lp-eyebrow {

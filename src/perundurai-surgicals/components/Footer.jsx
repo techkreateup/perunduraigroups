@@ -127,10 +127,28 @@ const Footer = () => {
           <div className="footer-bottom">
             <div className="footer-bottom-left">
               <p className="copyright-text">© 2026 Perundurai Surgicals. All rights reserved. | Proprietor: K. Ragavendran B.E.</p>
-              <p className="dev-text">
-                Designed & Developed by <a href="https://kreateup.in" target="_blank" rel="noopener noreferrer" className="dev-link">kreateup.in</a>
-                <br />Project Led By THARUN KIRUTHIK K S | Designed by LOGESHWARAN P & SUBASH P
-              </p>
+              <div className="dev-badge-wrap">
+                <div className="dev-badge">
+                  <span className="dev-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="16 18 22 12 16 6" />
+                      <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                  </span>
+                  <span className="dev-text-new">
+                    Designed & Developed by <a href="https://kreateup.in" target="_blank" rel="noopener noreferrer" className="dev-link-new">
+                      kreateup.in
+                      <svg className="external-arrow" viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', transition: 'transform 0.2s ease', display: 'inline-block', verticalAlign: 'middle' }}>
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+                <div className="designers-credit">
+                  Designed by LOGESHWARAN P & SUBASH P
+                </div>
+              </div>
             </div>
             <Link 
               to={isProductsPage ? "/surgicals" : "#"} 

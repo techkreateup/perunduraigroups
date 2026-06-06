@@ -2711,13 +2711,53 @@ body.surgicals-theme::-webkit-scrollbar-thumb:hover,
     transition: all 0.4s ease;
 }
 
-.surgicals-theme .footer-bottom .dev-text {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.45);
-    margin: 0;
+.surgicals-theme .footer-bottom .dev-badge-wrap {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
 }
 
-.surgicals-theme .footer-bottom .dev-text a {
+.surgicals-theme .footer-bottom .dev-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.surgicals-theme .footer-bottom .dev-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 
+        0 6px 20px rgba(139, 92, 246, 0.15),
+        0 2px 6px rgba(139, 92, 246, 0.1);
+}
+
+.surgicals-theme .footer-bottom .dev-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b5cf6;
+    animation: dev-icon-pulse 2s infinite ease-in-out;
+}
+
+.surgicals-theme .footer-bottom .dev-text-new {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.01em;
+}
+
+.surgicals-theme .footer-bottom .dev-link-new {
     background: linear-gradient(90deg, #8b5cf6, #c084fc, #818cf8, #a78bfa, #8b5cf6);
     background-size: 300% auto;
     -webkit-background-clip: text;
@@ -2725,11 +2765,41 @@ body.surgicals-theme::-webkit-scrollbar-thumb:hover,
     color: transparent !important;
     -webkit-text-fill-color: transparent !important;
     text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-right: 0 !important;
-    animation: kreateup-shimmer 3s linear infinite, kreateup-glow-purple 2s ease-in-out infinite;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    animation: kreateup-shimmer 3s linear infinite;
     transition: filter 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0 !important;
+}
+
+.surgicals-theme .footer-bottom .dev-link-new:hover {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
+}
+
+.surgicals-theme .footer-bottom .dev-badge:hover .external-arrow {
+    animation: arrow-nudge 1.5s ease-in-out infinite;
+    color: #a78bfa;
+}
+
+@keyframes arrow-nudge {
+    0%, 100% { transform: translate(1px, -1px); }
+    50% { transform: translate(3px, -3px); }
+}
+
+@media (max-width: 768px) {
+    .surgicals-theme .footer-bottom .external-arrow {
+        color: #a78bfa;
+        animation: arrow-nudge 1.5s ease-in-out infinite;
+    }
+}
+
+.surgicals-theme .footer-bottom .designers-credit {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    padding-left: 8px;
+    letter-spacing: 0.02em;
 }
 
 @keyframes kreateup-shimmer {
@@ -2737,14 +2807,15 @@ body.surgicals-theme::-webkit-scrollbar-thumb:hover,
     100% { background-position: 300% center; }
 }
 
-@keyframes kreateup-glow-purple {
-    0%, 100% { filter: drop-shadow(0 0 3px rgba(139, 92, 246, 0.0)); }
-    50% { filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.65)); }
-}
-
-.surgicals-theme .footer-bottom .dev-text a:hover {
-    filter: brightness(1.25) drop-shadow(0 0 12px rgba(139, 92, 246, 0.85));
-    animation-play-state: paused;
+@keyframes dev-icon-pulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(139, 92, 246, 0));
+    }
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8));
+    }
 }
 
 @media (hover: hover) {
