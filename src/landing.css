@@ -26,14 +26,14 @@
 /* Large watermark-style background image */
 .lp-watermark-bg {
     position: absolute;
-    top: 50%;
+    top: 64%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: min(80vw, 600px);
     height: min(80vw, 600px);
     pointer-events: none;
     z-index: 0;
-    opacity: 0.3;
+    opacity: 0.4;
     mix-blend-mode: multiply;
     display: flex;
     align-items: center;
@@ -103,8 +103,8 @@
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #1A5FA8;
-    background: rgba(26, 95, 168, 0.08);
+    color: #063363;
+    background: rgba(26, 95, 168, 0.2);
     border: 1px solid rgba(26, 95, 168, 0.18);
     padding: 5px 14px;
     border-radius: 50px;
@@ -344,6 +344,7 @@
     }
 
     .lp-watermark-bg {
+        top: 50%;
         width: min(75vw, 380px);
         height: min(75vw, 380px);
         opacity: 0.3;

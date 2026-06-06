@@ -129,6 +129,7 @@ const Footer = () => {
               <p className="copyright-text">© 2026 Perundurai Surgicals. All rights reserved. | Proprietor: K. Ragavendran B.E.</p>
               <p className="dev-text">
                 Designed & Developed by <a href="https://kreateup.in" target="_blank" rel="noopener noreferrer" className="dev-link">kreateup.in</a>
+                <br />Project Led By THARUN KIRUTHIK K S | Designed by LOGESHWARAN P & SUBASH P
               </p>
             </div>
             <Link 
